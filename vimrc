@@ -3,6 +3,7 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+set expandtab
 set showmatch
 set vb t_vb=
 set ruler
