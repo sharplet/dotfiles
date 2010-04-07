@@ -1,0 +1,19 @@
+Adam Sharp's dotfiles
+=====================
+
+Here's how I have this set up on my machine:
+
+ - I have this repo checked out under ~/.dotfiles/
+
+ - I have a symbolic link in my home directory for each of the dotfiles
+	 in the repository, e.g.:
+
+      $ cd
+      $ ln -sf ~/.dotfiles/bash_profile .bash_profile
+
+   This enables me to keep these dotfiles under version control.
+
+
+If you have any questions, find me on Twitter:
+ 
+    http://twitter.com/sharplet
