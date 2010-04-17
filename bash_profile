@@ -9,6 +9,7 @@ PATH="$PATH:/usr/local/depot_tools"
 PATH="$PATH:/usr/texbin"
 PATH="$PATH:/opt/local/bin"
 PATH="$PATH:/opt/local/sbin"
+PATH="$PATH:~/bin"
 export PATH=$PATH
 
 BIBDIR=~/.bibfiles/
@@ -38,5 +39,8 @@ alias la="ls -a"
 alias ll="ls -l"
 alias ping="ping -c 4"
 alias srv="cd $DOCROOT"
+
+alias lmake=latexmake
+alias gvim="open -a MacVim"
 
 . ~/.dotfiles/.bash_extra
