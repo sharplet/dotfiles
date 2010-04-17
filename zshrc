@@ -86,6 +86,7 @@ alias man='LC_ALL=C LANG=C man'
 alias f=finger
 alias ls='ls -G'
 alias ll='ls -al'
+alias la='ls -a'
 # alias ls='ls --color=auto '
 alias offlineimap-tty='offlineimap -u TTY.TTYUI'
 alias hnb-partecs='hnb $HOME/partecs/partecs-hnb.xml'
