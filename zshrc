@@ -73,6 +73,14 @@ unsetopt ALL_EXPORT
 # # aliases
 # # --------------------------------------------------------------------
 
+alias gi="git init"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit"
+alias gs="git status"
+alias gsh="git show"
+alias gl="git log"
+
 alias slrn="slrn -n"
 alias man='LC_ALL=C LANG=C man'
 alias f=finger
