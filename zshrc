@@ -5,6 +5,10 @@
 # 
 ######################################################################
 
+if [[ $LOGGED_IN != 'true' ]]; then
+  . ~/.profile
+fi
+
 # next lets set some enviromental/shell pref stuff up
 # setopt NOHUP
 #setopt NOTIFY
@@ -36,7 +40,6 @@ zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 
 
-PATH="/opt/local/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
