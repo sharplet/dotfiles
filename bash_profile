@@ -39,5 +39,3 @@ fi
 
 PATH="$PATH:~/bin"
 export PATH=$PATH
-
-. ~/.dotfiles/.bash_extra
