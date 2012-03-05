@@ -1,0 +1,25 @@
+[core]
+  editor = mate -wl1
+  whitespace = space-before-tab
+  # editor = mate --name 'Git Commit Message' -w -l 1
+[user]
+  name = Adam Sharp
+  email = adsharp@me.com
+[alias]
+  show-graph = log --graph --abbrev-commit --pretty=oneline
+  d = diff
+  svn-diff = !git-svn-diff
+  dc = diff --cached
+  co = checkout
+  s = status
+  c = commit
+[color]
+  diff = true
+[git-tmbundle]
+  gitx-path = /opt/local/bin/gitx
+[svn]
+  rmdir = true
+[log]
+  date = local
+[apply]
+  whitespace = nowarn
