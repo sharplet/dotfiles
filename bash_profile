@@ -55,7 +55,7 @@ git_has_local_changes ()
     in_git_repo || return;
     git diff --no-ext-diff --quiet --exit-code 2> /dev/null || echo -n "*"
 }
-export PS1="\u@\h \W\[\033[00;36m\]$(git_branch)\[\033[00;31m\]$(git_stats)\[\033[01;35m\]$(git_has_local_changes)\[\033[00m\]\$ "
+export PS1='\u@\h \W\[\033[00;36m\]$(git_branch)\[\033[00;31m\]$(git_stats)\[\033[01;35m\]$(git_has_local_changes)\[\033[00m\]\$ '
 
 # mysql
 if [ -x "$(which mysql)" ]; then
