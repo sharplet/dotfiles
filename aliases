@@ -1,0 +1,9 @@
+alias la="ls -a"
+alias ll="ls -l"
+alias ping="ping -c 4"
+
+# Mac OS X only
+if [ "$(uname)" = "Darwin" ]; then
+  alias ls="ls -G"
+  alias srv="cd $DOCROOT"
+fi
