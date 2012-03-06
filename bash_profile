@@ -45,10 +45,17 @@ git_branch ()
     in_git_repo || return;
     echo -n " $(git symbolic-ref HEAD | sed 's,.*/\([^/]*\)$,\1,g')"
 }
+sed_alternatives=(gsed sed)
+for app in ${sed_alternatives[*]}; do
+    if [ -n "$(which "${app}" 2>/dev/null)" ]; then
+        sed_app="${app}"
+        break
+    fi
+done
 git_stats ()
 {
     in_git_repo || return;
-    echo -n "$(git branch -v | /usr/local/bin/gsed -nr '/^\* \S+\s+[0-9a-fA-F]+ \[(ahead|behind)/{s,[^[]*\[([^]]*)\].*,\1,g;s,behind,-,g;s,ahead,+,g;s,[ \,],,g;p}')"
+    echo -n "$(git branch -v | ${sed_app} -nr '/^\* \S+\s+[0-9a-fA-F]+ \[(ahead|behind)/{s,[^[]*\[([^]]*)\].*,\1,g;s,behind,-,g;s,ahead,+,g;s,[ \,],,g;p}')"
 }
 git_has_local_changes ()
 {
