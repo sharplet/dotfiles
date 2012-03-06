@@ -13,7 +13,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 # only if mate is installed locally (not rmate)
-if [ ! -x "$(which rmate)" -a -x "$(which mate)" ]; then
+if [ ! -x "$(which rmate 2>/dev/null)" -a -x "$(which mate 2>/dev/null)" ]; then
   export LESSEDIT="mate -l %lm %f" # edit document in less by hitting 'v'
 fi
 
@@ -21,7 +21,7 @@ fi
 if [ -d "/usr/texbin" ]; then
   PATH="$PATH:/usr/texbin"
 fi
-if [ -x "$(which bibtex)" ]; then
+if [ -x "$(which bibtex 2>/dev/null)" ]; then
   BIBDIR=~/.bibfiles/
   if [[ $BIBINPUT ]]; then
   	BIBINPUT=$BIBINPUT:$BIBDIR
@@ -65,7 +65,7 @@ git_has_local_changes ()
 export PS1='\u@\h \W\[\033[00;36m\]$(git_branch)\[\033[00;31m\]$(git_stats)\[\033[01;35m\]$(git_has_local_changes)\[\033[00m\]\$ '
 
 # mysql
-if [ -x "$(which mysql)" ]; then
+if [ -x "$(which mysql 2>/dev/null)" ]; then
   PATH="$PATH:/usr/local/mysql/bin"
 fi
 
