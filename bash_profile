@@ -1,10 +1,6 @@
 # use vi command line editing
 set -o vi
 
-if [ "$LOGGED_IN" != 'truer' ]; then
-  . ~/.profile
-fi
-
 # Mac OS X only
 if [ "$(uname)" = "Darwin" ]; then
   export WEBSERV="/Library/WebServer"
@@ -69,5 +65,6 @@ if [ -x "$(which mysql 2>/dev/null)" ]; then
   PATH="$PATH:/usr/local/mysql/bin"
 fi
 
-PATH="$PATH:~/bin"
+PATH="~/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 export PATH=$PATH

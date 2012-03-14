@@ -15,7 +15,7 @@ filetype plugin indent on
 set tw=72
 
 " spell checking
-setlocal spell spelllang=en_au
+"setlocal spell spelllang=en_au
 
 " environment variables
 let $BIBINPUT="/Users/adsharp/.bibfiles/"
