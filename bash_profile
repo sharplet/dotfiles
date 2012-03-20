@@ -1,11 +1,17 @@
 # use vi command line editing
 set -o vi
 
+# import aliases
+[ -f "${HOME}/.aliases" ] && . ~/.aliases
+
 # Mac OS X only
 if [ "$(uname)" = "Darwin" ]; then
   export WEBSERV="/Library/WebServer"
   export DOCROOT="/Library/WebServer/Documents"
   export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+  export EDITOR="mate -wl1"
+else
+  export EDITOR="vim"
 fi
 
 # only if mate is installed locally (not rmate)
