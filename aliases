@@ -15,7 +15,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 if [ "$(type -t rake_wrapper)" = "function" -o \
-     -x "$(which rake_wrapper)" ]
+     -x "$(which rake_wrapper 2>&1 >/dev/null)" ]
 then
   alias rake="rake_wrapper"
 fi
