@@ -11,6 +11,7 @@ if [ "$(uname)" = "Darwin" ]; then
   alias md5sum="md5 -r"
   alias sha1sum="shasum"
   alias srv="cd $DOCROOT"
+  alias marked="open -a Marked"
 fi
 
 if [ "$(type -t rake_wrapper)" = "function" -o \

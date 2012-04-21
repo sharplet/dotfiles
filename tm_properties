@@ -9,11 +9,14 @@ tabSize  = 2
 [ text.xml ]
 softWrap = false
 
+[ text.html ]
+softWrap = false
+
 [ text.html.markdown ]
 tabSize = 4
 
 # [ text.git-commit ]
 # softWrap = false
-# 
+#
 # [ "git-rebase-todo" ]
 # fileType = text.git-rebase

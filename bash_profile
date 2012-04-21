@@ -1,15 +1,12 @@
 # use vi command line editing
 set -o vi
 
-# import aliases
-[ -f "${HOME}/.aliases" ] && . ~/.aliases
-
 # Mac OS X only
 if [ "$(uname)" = "Darwin" ]; then
   export WEBSERV="/Library/WebServer"
   export DOCROOT="/Library/WebServer/Documents"
   export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-  export EDITOR="mate -wl1"
+  export EDITOR="bbedit -w"
 else
   export EDITOR="vim"
 fi
@@ -85,6 +82,11 @@ if [ -x "$(which mysql 2>/dev/null)" ]; then
   PATH="$PATH:/usr/local/mysql/bin"
 fi
 
-PATH="~/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
+PATH="~/bin:$PATH"
 export PATH=$PATH
+
+# import aliases
+[ -f "${HOME}/.aliases" ] && . ~/.aliases
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -1,6 +1,8 @@
 [core]
-  editor = mate -wl1
+  editor = bbedit -w
   whitespace = space-before-tab
+  quotepath = false
+  excludesfile = /Users/adsharp/.gitignore
   # editor = mate --name 'Git Commit Message' -w -l 1
 [user]
   name = Adam Sharp
@@ -13,6 +15,7 @@
   co = checkout
   s = status
   c = commit
+  wd = diff --word-diff
 [color]
   diff = true
 [git-tmbundle]
