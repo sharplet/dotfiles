@@ -13,6 +13,12 @@ if [ "$(uname)" = "Darwin" ]; then
   alias srv="cd $DOCROOT"
 fi
 
+if [ "$(type -t rake_wrapper)" = "function" -o \
+     -x "$(which rake_wrapper)" ]
+then
+  alias rake="rake_wrapper"
+fi
+
 # Cygwin
 if [ "$(uname -o 2>/dev/null)" = "Cygwin" ]; then
   alias ls="ls --color"

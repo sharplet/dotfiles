@@ -1,4 +1,5 @@
 TM_GIT = "/usr/local/bin/git"
+TM_RUBY = "/Users/adsharp/.rvm/bin/rvm-auto-ruby"
 
 wrapColumn = 72
 showWrapColumn = true

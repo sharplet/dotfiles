@@ -66,6 +66,20 @@ git_has_local_changes ()
 }
 export PS1='\u@\h \W\[\033[00;36m\]$(git_branch)\[\033[00;31m\]$(git_stats)\[\033[01;35m\]$(git_has_local_changes)\[\033[00m\]\$ '
 
+# Rails
+in_rails_app()
+{
+  /usr/bin/env ruby /Users/adsharp/bin/in_rails_app.rb
+}
+rake_wrapper()
+{
+  if [ in_rails_app ]; then
+    bundle exec rake "$@"
+  else
+    rake "$@"
+  fi
+}
+
 # mysql
 if [ -x "$(which mysql 2>/dev/null)" ]; then
   PATH="$PATH:/usr/local/mysql/bin"
