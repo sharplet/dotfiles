@@ -1,5 +1,5 @@
 [core]
-  editor = bbedit -w
+  editor = mate -w
   whitespace = space-before-tab
   quotepath = false
   excludesfile = /Users/adsharp/.gitignore

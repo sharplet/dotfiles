@@ -6,7 +6,7 @@ if [ "$(uname)" = "Darwin" ]; then
   export WEBSERV="/Library/WebServer"
   export DOCROOT="/Library/WebServer/Documents"
   export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-  export EDITOR="bbedit -w"
+  export EDITOR="mate -w"
 else
   export EDITOR="vim"
 fi
@@ -83,7 +83,7 @@ if [ -x "$(which mysql 2>/dev/null)" ]; then
 fi
 
 PATH="/usr/local/bin:$PATH"
-PATH="~/bin:$PATH"
+PATH="${HOME}/bin:$PATH"
 export PATH=$PATH
 
 # import aliases
