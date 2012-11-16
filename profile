@@ -25,3 +25,8 @@ alias gc="git commit"
 alias gs="git status"
 alias gsh="git show"
 alias gl="git log"
+
+# The following three lines have been added by IBM DB2 instance utilities.
+if [ -f /Users/adsharp/sqllib/db2profile ]; then
+    . /Users/adsharp/sqllib/db2profile
+fi

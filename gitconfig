@@ -1,8 +1,9 @@
 [core]
-  editor = mate -w
-  whitespace = space-before-tab
+  editor = mate -wl1
+  whitespace = space-before-tab,trailing-space
   quotepath = false
   excludesfile = /Users/adsharp/.gitignore
+	autocrlf = false
   # editor = mate --name 'Git Commit Message' -w -l 1
 [user]
   name = Adam Sharp
@@ -16,13 +17,41 @@
   s = status
   c = commit
   wd = diff --word-diff
+  l = log --oneline
+  # based on http://stackoverflow.com/questions/3631005/git-log-tabular-formatting
+  # l = "!git log -10 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  l1 = "!git log -1 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  l2 = "!git log -2 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  l3 = "!git log -3 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  l4 = "!git log -4 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  l5 = "!git log -5 --pretty=format:'%C(yellow)%h%Creset|%cr|%Cgreen%an%Creset|%s' | awk -F '|' '{ printf \"%s %-14s %-18s %s\\n\", $1, $2, $3, $4 }'"
+  # l1 = log -1 --oneline
+  # l2 = log -2 --oneline
+  # l3 = log -3 --oneline
+  # l4 = log -4 --oneline
+  # l5 = log -5 --oneline
+  b = branch
+  untracked-files = !git status -s | awk '{print $2}'
+  un = !git untracked-files
+  lo1 = log -1
+  lo2 = log -2
+  lo3 = log -3
+  lo4 = log -4
+  lo5 = log -5
+  sr = svn rebase
+  sd = svn dcommit
+  sf = svn fetch
+  r = rebase
+  ri = rebase -i
+  sp = stash pop
 [color]
   diff = true
 [git-tmbundle]
-  gitx-path = /opt/local/bin/gitx
+  gitx-path = /usr/local/bin/gitx
 [svn]
   rmdir = true
+  pushmergeinfo = true
 [log]
   date = local
-[apply]
-  whitespace = nowarn
+[github]
+	user = sharplet

@@ -11,6 +11,14 @@ else
   export EDITOR="vim"
 fi
 
+# db2 environment
+[ -f "$HOME/sqllib/db2profile" ] && source "$HOME/sqllib/db2profile"
+[ -z "$LD_LIBRARY_PATH" -a -n "$IBM_DB_LIB" ] && export LD_LIBRARY_PATH=$IBM_DB_LIB
+
+if [ -x "$(which brew 2>/dev/null)" ]; then
+  export HOMEBREW_TEMP=/tmp
+fi
+
 # only if mate is installed locally (not rmate)
 if [ ! -x "$(which rmate 2>/dev/null)" -a -x "$(which mate 2>/dev/null)" ]; then
   export LESSEDIT="mate -l %lm %f" # edit document in less by hitting 'v'
@@ -31,49 +39,41 @@ if [ -x "$(which bibtex 2>/dev/null)" ]; then
   export BIBINPUTS=$BIBINPUT
 fi
 
-# Git
-in_git_repo ()
+gd()
 {
-    git rev-parse --show-cdup >&/dev/null || return 1;
-    git branch | grep -q '* (no branch)' && return 1;
-    [ -z "${PWD%%*/.git*}" ] && return 1;
-    return 0
+  ( # doing this in a subshell so we don't lose stdout
+    exec &>/dev/null
+    git ls-files -m -o --exclude-standard "$@" | xargs unix2dos
+  )
 }
-git_branch ()
+gu()
 {
-    in_git_repo || return;
-    echo -n " $(git symbolic-ref HEAD | sed 's,.*/\([^/]*\)$,\1,g')"
+  ( # doing this in a subshell so we don't lose stdout
+    exec &>/dev/null
+    git ls-files -m -o --exclude-standard "$@" | xargs dos2unix
+  )
 }
-sed_alternatives=(gsed sed)
-for app in ${sed_alternatives[*]}; do
-    if [ -n "$(which "${app}" 2>/dev/null)" ]; then
-        sed_app="${app}"
-        break
-    fi
-done
-git_stats ()
+ga()
 {
-    in_git_repo || return;
-    echo -n "$(git branch -v | ${sed_app} -nr '/^\* \S+\s+[0-9a-fA-F]+ \[(ahead|behind)/{s,[^[]*\[([^]]*)\].*,\1,g;s,behind,-,g;s,ahead,+,g;s,[ \,],,g;p}')"
+  gu "$@"
+  git add "$@"
 }
-git_has_local_changes ()
-{
-    in_git_repo || return;
-    git diff --no-ext-diff --quiet --exit-code 2> /dev/null || echo -n "*"
-}
-export PS1='\u@\h \W\[\033[00;36m\]$(git_branch)\[\033[00;31m\]$(git_stats)\[\033[01;35m\]$(git_has_local_changes)\[\033[00m\]\$ '
 
 # Rails
+if [ "$(ruby -v | awk '{print $1}')" = "jruby" ]; then
+  NG_VAR=--ng
+fi
+export JRUBY_OPTS='--1.9 -Xlaunch.inproc=false'
 in_rails_app()
 {
   /usr/bin/env ruby /Users/adsharp/bin/in_rails_app.rb
 }
 rake_wrapper()
 {
-  if [ in_rails_app ]; then
-    bundle exec rake "$@"
+  if [ -x "bin/rake" ]; then
+    JRUBY_OPTS="$JRUBY_OPTS --ng" bin/rake "$@"
   else
-    rake "$@"
+    JRUBY_OPTS="$JRUBY_OPTS --ng" /usr/bin/env rake "$@"
   fi
 }
 
@@ -86,7 +86,35 @@ PATH="/usr/local/bin:$PATH"
 PATH="${HOME}/bin:$PATH"
 export PATH=$PATH
 
-# import aliases
-[ -f "${HOME}/.aliases" ] && . ~/.aliases
+# jruby optimisation
+# export JAVA_OPTS="$JAVA_OPTS -d32"
+alias ng="jruby --ng-server"
+alias ngx="jruby --ng -S"
+alias rake="JRUBY_OPTS=--ng rake"
+alias bundle="JRUBY_OPTS=${NG_VAR} bundle"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# workaround for rake column width issue
+export RAKE_COLUMNS=$(tput cols)
+
+# import aliases
+[ -f "${HOME}/.aliases" ] && . ${HOME}/.aliases
+
+# rvm
+. ${HOME}/.rvm/scripts/rvm
+
+# source completion scripts
+COMPLETION_FILES=$(ls /usr/local/etc/bash_completion.d/*{git,hub,subversion,tmux}*)
+if [ -d "/usr/local/etc/bash_completion.d" ]; then
+  for file in $COMPLETION_FILES; do
+    source $file
+  done
+fi
+
+# git prompt
+export PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
+# export GIT_PS1_SHOWDIRTYSTATE=1
+# export GIT_PS1_SHOWUNTRACKEDFILES=1
+# export GIT_PS1_SHOWSTASHSTATE=1
+
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

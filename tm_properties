@@ -1,5 +1,5 @@
 TM_GIT = "/usr/local/bin/git"
-TM_RUBY = "/Users/adsharp/.rvm/bin/rvm-auto-ruby"
+# TM_RUBY = "/Users/adsharp/.rvm/bin/rvm-auto-ruby"
 
 wrapColumn = 72
 showWrapColumn = true
@@ -8,15 +8,51 @@ tabSize  = 2
 
 [ text.xml ]
 softWrap = false
+tabSize = 4
 
 [ text.html ]
 softWrap = false
 
 [ text.html.markdown ]
 tabSize = 4
+softWrap = true
+
+[ source.sql ]
+tabSize = 4
+
+[ "*.tmTheme" ]
+fileType = 'source.sql'
 
 # [ text.git-commit ]
 # softWrap = false
 #
 # [ "git-rebase-todo" ]
 # fileType = text.git-rebase
+
+# ==========================
+# = Aviarc-specific scopes =
+# ==========================
+[ workflows/**/*.xml ]
+scopeAttributes = 'attr.aviarc.workflow'
+
+[ xmlcommands/**/command-template.xml ]
+scopeAttributes = 'attr.aviarc.template-command'
+
+[ screens/**/*.xml ]
+scopeAttributes = 'attr.aviarc.screen'
+
+[ databindings/**/*.xml ]
+scopeAttributes = 'attr.aviarc.databinding'
+
+# TODO: Not yet sure if this will be useful, and the next two rules override it anyway
+# [ databrokers/**/{queries,workflows}/*.{sql,xml} ]
+# scopeAttributes = 'attr.aviarc.databroker.operation'
+
+[ databrokers/**/queries/*.sql ]
+scopeAttributes = 'attr.aviarc.databroker.query'
+
+[ databrokers/**/workflows/*.xml ]
+scopeAttributes = 'attr.aviarc.databroker.workflow'
+
+[ databrokers/**/definition.xml ]
+scopeAttributes = 'attr.aviarc.databroker.definition'

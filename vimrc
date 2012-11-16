@@ -1,3 +1,12 @@
+" enable pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+" disable some stuff I'm not using
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'nerdcommenter')
+
+" basic settings
 set nocompatible
 set tabstop=2
 set shiftwidth=2
@@ -13,6 +22,32 @@ syntax on
 set incsearch
 filetype plugin indent on
 set tw=72
+
+" -----------------------------------------
+"  http://stackoverflow.com/questions/2157914/can-vim-monitor-realtime-changes-to-a-file
+"
+"  automatically reload file when it changes on disk
+set autoread
+" -----------------------------------------
+" http://mislav.uniqpath.com/2011/12/vim-revisited/
+" 
+" use comma as <Leader> key instead of backslash
+let mapleader=","
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
+" ,, will open last buffer
+nnoremap <leader><leader> <c-^> 
+" -----------------------------------------
+" http://stackoverflow.com/questions/1919028/how-to-show-vertical-line-to-wrap-the-line-in-vim
+set colorcolumn=+1        " highlight column after 'textwidth'
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+" -----------------------------------------
 
 " spell checking
 "setlocal spell spelllang=en_au

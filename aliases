@@ -18,6 +18,10 @@ if [ -x "$(which trak 2>/dev/null)" ]; then
   alias track=trak
 fi
 
+if [ -x "$(which hub 2>/dev/null)" ]; then
+  alias git=hub
+fi
+
 if [ "$(type -t rake_wrapper)" = "function" -o \
      -x "$(which rake_wrapper 2>/dev/null)" ]
 then
