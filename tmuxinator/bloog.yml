@@ -1,0 +1,11 @@
+# ~/.tmuxinator/bloog.yml
+# you can make as many tabs as you wish...
+
+project_name: bloog
+project_root: ~/src/rails/bloog
+tabs:
+  - bloog:
+      layout: main-vertical
+      panes:
+        - clear; git status
+        - rails s

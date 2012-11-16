@@ -1,0 +1,9 @@
+# ~/.tmuxinator/pets.yml
+# you can make as many tabs as you wish...
+
+project_name: pets
+project_root: ~/src/aviarc/applications/pets
+pre: gitx
+tabs:
+  - pets: git status
+  - jetty: a361

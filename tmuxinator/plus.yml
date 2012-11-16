@@ -1,0 +1,9 @@
+# ~/.tmuxinator/plus.yml
+# you can make as many tabs as you wish...
+
+project_name: plus
+project_root: ~/src/aviarc/applications/plus
+pre: open -a 'Parallels Desktop'; open -a SQLDeveloper; gitx; mate .
+tabs:
+  - plus: git status
+  - jetty: a361

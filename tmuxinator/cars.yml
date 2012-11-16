@@ -1,0 +1,13 @@
+# ~/.tmuxinator/cars.yml
+# you can make as many tabs as you wish...
+
+project_name: cars
+project_root: ~/src/aviarc/applications/cars
+pre: open -a 'Parallels Desktop'; gitx
+tabs:
+  - cars: git svn fetch; git status
+  - trak: cd; clear; trak
+  - nailgun: clear; JAVA_OPTS= JRUBY_OPTS= ng
+  - jetty: a361
+  - fakesmtp: sudo /Applications/FakeSMTP.app/Contents/MacOS/FakeSMTP
+  # - oldcars: cd ~/src/aviarc/applications/oldcars

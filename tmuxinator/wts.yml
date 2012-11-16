@@ -1,0 +1,9 @@
+# ~/.tmuxinator/wts.yml
+# you can make as many tabs as you wish...
+
+project_name: wts
+project_root: ~/src/aviarc/applications/wts
+tabs:
+  - wts: gitx; mate .; clear; git status
+  - jetty: a360
+  - fakesmtp: sudo /Applications/FakeSMTP.app/Contents/MacOS/FakeSMTP

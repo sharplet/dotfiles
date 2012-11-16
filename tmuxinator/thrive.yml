@@ -1,0 +1,9 @@
+# ~/.tmuxinator/thrive.yml
+# you can make as many tabs as you wish...
+
+project_name: thrive
+project_root: ~/src/aviarc/applications/thrive
+pre: mate .; open -a 'Parallels Desktop'; gitx
+tabs:
+  - thrive: git status
+  - jetty: a352
