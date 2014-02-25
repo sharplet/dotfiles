@@ -1,0 +1,54 @@
+[core]
+	editor = mate -wl1
+	trustctime = false
+[alias]
+	s = status
+	c = commit
+	b = branch
+	co = checkout
+	r = rebase
+	d = diff
+	dc = diff --cached
+	wd = diff --word-diff
+	l = log --oneline
+	unchanged = update-index --assume-unchanged
+	no-unchanged = update-index --no-assume-unchanged
+	ld = log --oneline --decorate
+	owner = !sh -c \"git blame --line-porcelain \\\"$@\\\" | sed -n \\\"s/^author //p\\\" | sort | uniq -c | sort -rn\"
+	unstage = rm --cached
+	rmc = rm --cached
+	rrmc = rm -r --cached
+	cp = cherry-pick
+	autosquash = rebase --interactive --autosquash
+	yolo = push --force
+	lsd = ls-files -d
+	lsm = ls-files -m
+    latest-tag = describe --tags --abbrev=0
+[color]
+	diff = true
+	ui = false
+[user]
+	name = Adam Sharp
+	email = adam.sharp@outware.com.au
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+	defaultToUpstream = true
+[rebase]
+	autosquash = true
+[hub]
+	protocol = https
