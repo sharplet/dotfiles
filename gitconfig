@@ -23,13 +23,13 @@
 	yolo = push --force
 	lsd = ls-files -d
 	lsm = ls-files -m
-    latest-tag = describe --tags --abbrev=0
+	latest-tag = describe --tags --abbrev=0
 [color]
 	diff = true
 	ui = false
 [user]
 	name = Adam Sharp
-	email = adam.sharp@outware.com.au
+	email = adsharp@me.com
 [rerere]
 	enabled = true
 [push]

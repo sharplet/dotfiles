@@ -1,6 +1,13 @@
 # vi command line editing
 set -o vi
 
+# git environment
+git_env="$HOME/.git.env"
+if [ -f "$git_env" ]; then
+  . "$git_env"
+fi
+unset git_env
+
 # aliases
 alias ls="ls -G"
 alias ll="ls -l"
