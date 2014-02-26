@@ -34,19 +34,17 @@ function go()
     return 1
   fi
 
-  # Arguments to ls:
-  #  -t  sort by modification time
-  #  -F  directories are formatted with a trailing '/'
-  #  -H  follow symlinks, e.g., ls -H /tmp (symlinked to /private/tmp) should
-  #      list directory contents, not the link itself
-  local dir=$(ls -tFH $base | grep '/$' | sed 's/\/$//' | selecta)
+  echo >&2 "(in $base)"
+  local findopts="-type d -maxdepth 4"
+  local excludes='.cocoapods|.vim/bundle'
+  local dir=$(find $base $findopts -path '*.git' 2>/dev/null | sed 's,/.git$,,' | grep -vE "$excludes" | xargs stat -f '%m %N' | sort -nr | sed -E 's,^[0-9]+ ,,' | sed "s,^$base/,," | sed 's,/.git$,,' | selecta)
 
   if [ -n "$dir" ]; then
     local dest=$base/$dir
-    touch $dest && cd $dest # && clear
+    touch $dest && cd $dest
   fi
 }
-export PROJ_ROOT=~/src/anz
+export PROJ_ROOT=$HOME
 
 # editor
 export EDITOR='mate -w'
