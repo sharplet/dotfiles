@@ -73,6 +73,6 @@ export PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # environment
-for dotenv in $(ls $HOME/.*.env >/dev/null 2>&1); do
+for dotenv in $(ls $HOME/.*.env 2>/dev/null); do
   . $dotenv
 done
