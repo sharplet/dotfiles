@@ -1,13 +1,6 @@
 # vi command line editing
 set -o vi
 
-# git environment
-git_env="$HOME/.git.env"
-if [ -f "$git_env" ]; then
-  . "$git_env"
-fi
-unset git_env
-
 # aliases
 alias ls="ls -G"
 alias ll="ls -l"
@@ -64,9 +57,6 @@ eval "$(hub alias -s)"
 # prompt
 export PS1='\u@\h \W$(__git_ps1)$ '
 
-export OMSCRIPTS="~/src/omscripts"
-export omscripts=$OMSCRIPTS
-
 # ruby
 export GEM_HOME="$HOME/.gem/ruby/2.0.0"
 
@@ -81,3 +71,8 @@ export PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# environment
+for dotenv in $(ls $HOME/.*.env >/dev/null 2>&1); do
+  . $dotenv
+done
