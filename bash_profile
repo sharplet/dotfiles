@@ -16,7 +16,7 @@ alias pod24="pod _0.24.0_"
 
 alias rt="rake test"
 
-alias reload="exec bash --login"
+alias reload="exec bash -il"
 
 # present a project selector and change to the selected directory
 function go()
