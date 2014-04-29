@@ -26,6 +26,8 @@
 	lsm = ls-files -m
 	latest-tag = describe --tags --abbrev=0
 	pt = push --tags
+	cclone = !hub clone $1
+	t = tag
 [color]
 	diff = true
 	ui = false
