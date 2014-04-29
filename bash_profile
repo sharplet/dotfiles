@@ -2,11 +2,11 @@
 set -o vi
 
 # aliases
+[ -f "$HOME/.aliases" ] && source $HOME/.aliases
 alias ls="ls -G"
 alias ll="ls -l"
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias nukexcode='stupidxcode; sudo find /var/folders ~/Library/Caches -type d -path "*Xcode" -exec rm -rf {} \;'
-alias xc=xcodebuild
 alias xcode4="sudo xcode-select --switch /Applications/Xcode-4.app"
 alias xcode5="sudo xcode-select --switch /Applications/Xcode.app"
 alias podl="pod install --no-repo-update"
