@@ -1,2 +1,5 @@
 # Xcode
 alias xc="open -a Xcode"
+
+# Other
+alias marked="open -a Marked"
