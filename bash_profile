@@ -16,7 +16,9 @@ function go()
   echo >&2 "(in $base)"
   local findopts="-type d -maxdepth 4"
   local excludes='.cocoapods|.vim/bundle'
-  local dir=$(find $base $findopts -path '*/.git' 2>/dev/null | sed 's,/.git$,,' | grep -vE "$excludes" | xargs stat -f '%m %N' | sort -nr | sed -E 's,^[0-9]+ ,,' | sed "s,^$base/,," | sed "s,^src/,," | sed 's,/.git$,,' | selecta)
+
+  # find -H -> follow symlinks
+  local dir=$(find -H $base $findopts -path '*/.git' 2>/dev/null | sed 's,/.git$,,' | grep -vE "$excludes" | xargs -I{} stat -f '%m %N' '{}' | sort -nr | sed -E 's,^[0-9]+ ,,' | sed -E "s,^$base/(src/)?,," | sed 's,/.git$,,' | selecta)
 
   if [ -n "$dir" ]; then
     local dest=$base/$dir
