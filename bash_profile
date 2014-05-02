@@ -36,9 +36,6 @@ export EDITOR='mate -w'
 # completion
 source /usr/share/git-core/git-completion.bash
 source /usr/share/git-core/git-prompt.sh
-for f in /usr/local/etc/bash_completion.d/*; do
-  source $f
-done
 
 # git
 alias gs="git status"
