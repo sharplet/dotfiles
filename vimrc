@@ -15,7 +15,7 @@ set relativenumber
 " filetype
 filetype plugin on
 filetype indent on
-autocmd BufRead,BufNewFile Podfile,*.podspec set filetype=ruby
+autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
 
 " text formatting
 set expandtab
