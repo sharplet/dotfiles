@@ -34,7 +34,7 @@ function go()
 export PROJ_ROOT=$HOME
 
 # editor
-export EDITOR='mate -w'
+export EDITOR=vim
 
 # completion
 source /usr/share/git-core/git-completion.bash

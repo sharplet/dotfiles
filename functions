@@ -1,6 +1,13 @@
 #!/bin/bash
 
+# print the last touched file in this directory
 function lf()
 {
   ls -t | head -1
+}
+
+# edit the last touched file with EDITOR
+function elf()
+{
+  [ "x$EDITOR" != "x" ] && $EDITOR "$(lf)"
 }
