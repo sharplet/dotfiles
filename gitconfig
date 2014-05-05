@@ -1,5 +1,5 @@
 [core]
-	editor = mate -wl1
+	editor = vim
 	trustctime = false
 	pager = less -x5,9
 [alias]
