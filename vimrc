@@ -37,7 +37,7 @@ set wildignore=**/*.png,Build/**
 set secure
 
 " NERDTree
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 
 " NERDCommenter
 let g:NERDCustomDelimiters = {
