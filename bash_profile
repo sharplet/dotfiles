@@ -4,6 +4,9 @@ set -o vi
 # aliases
 [ -f "$HOME/.aliases" ] && source $HOME/.aliases
 
+# functions
+[ -f "$HOME/.functions" ] && source $HOME/.functions
+
 # present a project selector and change to the selected directory
 function go()
 {

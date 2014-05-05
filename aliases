@@ -18,6 +18,7 @@ alias src="cd $HOME/src"
 # shell
 alias ls="ls -G"
 alias ll="ls -l"
+alias lt="ls -t"
 
 # apps
 alias marked="open -a Marked"
