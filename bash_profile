@@ -28,7 +28,7 @@ function go()
     if [ ! -d "$dest" ]; then
       dest=$base/src/$dir
     fi
-    touch $dest && cd $dest
+    touch "$dest" && cd "$dest"
   fi
 }
 export PROJ_ROOT=$HOME
