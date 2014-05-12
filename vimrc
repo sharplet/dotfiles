@@ -15,6 +15,10 @@ set relativenumber
 " color scheme
 colorscheme twilight256
 
+" invisibles
+nmap <leader>l :set list!<CR>
+set listchars=tab:‣\ ,eol:¬
+
 " filetype
 filetype plugin on
 filetype indent on
