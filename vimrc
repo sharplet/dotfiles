@@ -7,5 +7,7 @@ set number
 set wrap
 syntax on
 
+colorscheme twilight256
+
 au BufRead,BufNewFile *.md set filetype=markdown
 au FileType markdown set linebreak
