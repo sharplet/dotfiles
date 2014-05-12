@@ -12,6 +12,9 @@ syntax on
 set nu
 set relativenumber
 
+" color scheme
+colorscheme twilight256
+
 " filetype
 filetype plugin on
 filetype indent on
