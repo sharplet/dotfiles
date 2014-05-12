@@ -18,6 +18,7 @@ colorscheme twilight256
 " invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:‣\ ,eol:¬
+set list
 
 " filetype
 filetype plugin on
