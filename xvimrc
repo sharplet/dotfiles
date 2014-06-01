@@ -1,0 +1,9 @@
+" case insensitive search
+set ignorecase
+
+" enable relative numbering with absolute number for current line
+set relativenumber
+set number
+
+" XVim development
+set debug

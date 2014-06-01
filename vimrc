@@ -9,8 +9,7 @@ let mapleader=","
 
 " syntax highlighting & line numbers
 syntax on
-set nu
-set relativenumber
+set relativenumber number
 
 " color scheme
 colorscheme twilight256
@@ -19,6 +18,12 @@ colorscheme twilight256
 nmap <leader>l :set list!<CR>
 set listchars=tab:‣\ ,eol:¬
 set list
+
+" window management
+nmap <leader>w :bd<CR>
+nmap <leader><leader>w :%bd<CR>
+nmap <leader>q :q<CR>
+nmap <leader><leader>q :qa<CR>
 
 " filetype
 filetype plugin on
@@ -33,6 +38,7 @@ set sw=4
 
 " search
 set incsearch
+set ignorecase
 
 " completion
 set wildmenu
