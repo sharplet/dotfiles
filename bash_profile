@@ -48,20 +48,12 @@ eval "$(hub alias -s)"
 # prompt
 export PS1='\u@\h \W$(__git_ps1)$ '
 
-# ruby
-export GEM_HOME="$HOME/.gem/ruby/2.0.0"
-
-# PATH
-PATH="/usr/local/share/npm/bin:$PATH"
-PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-# PATH="/usr/local/opt/ruby/bin:$PATH" # => switched back to system gemset
-PATH="$PATH:~/src/anz/jenkins-tools/jenkins/CodeQualityScripts"
-PATH="$PATH:~/src/anz/jenkins-tools/jenkins/oclint-0.7/bin"
-PATH="$PATH:$HOME/bin"
-export PATH
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# PATH
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$HOME/bin:$PATH"
 
 # environment
 for dotenv in $(ls $HOME/.*.env 2>/dev/null); do
