@@ -1,2 +1,2 @@
 tap thoughtbot/formulae
-install rcm chisel
+install rcm chisel the_silver_searcher
