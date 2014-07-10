@@ -2,7 +2,6 @@
 	editor = vim
 	trustctime = false
 	pager = less -x5,9
-	excludesfile = ~/.gitignore
 [alias]
 	s = status
 	c = commit
