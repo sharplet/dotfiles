@@ -5,6 +5,11 @@ call pathogen#helptags()
 " enable project-specific .vimrc files
 set exrc
 
+" show ruler
+set ruler
+set laststatus=2
+set statusline=%{pathshorten(fnamemodify(expand('%f'),':~:.'))}[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
 let mapleader=","
 
 " syntax highlighting & line numbers
