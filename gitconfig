@@ -28,6 +28,8 @@
 	pt = push --tags
 	cclone = !hub clone $1
 	t = tag
+	logf = !git log --ignore-missing ^origin/{master,develop,development} HEAD
+	lf = !git logf --oneline
 [color]
 	diff = true
 	ui = false
