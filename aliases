@@ -1,5 +1,8 @@
 alias reload="exec bash -il"
 
+# ANZ
+alias rout="sudo anzroutes.rb"
+
 # xcode
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias nukexcode='stupidxcode; sudo find /var/folders ~/Library/Caches -type d -path "*Xcode" -exec rm -rf {} \;'
