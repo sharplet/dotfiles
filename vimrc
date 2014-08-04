@@ -10,6 +10,9 @@ set ruler
 set laststatus=2
 set statusline=%{pathshorten(fnamemodify(expand('%f'),':~:.'))}[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
+" enable sane backspacing
+set backspace=indent,eol,start
+
 let mapleader=","
 
 " syntax highlighting & line numbers
