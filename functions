@@ -25,6 +25,6 @@ function xc5()
 }
 function xc6()
 {
-  sudo xcode-select --switch /Applications/Xcode6-Beta5.app
+  sudo xcode-select --switch /Applications/Xcode6-Beta6.app
   [ $# -gt 0 ] && xc $@
 }
