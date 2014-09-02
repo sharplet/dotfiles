@@ -46,7 +46,7 @@ alias g=git
 eval "$(hub alias -s)"
 
 # prompt
-export PS1='\u@\h \W$(__git_ps1)$ '
+export PS1='\h \W$(__git_ps1)$ '
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
