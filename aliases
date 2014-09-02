@@ -24,3 +24,4 @@ alias lt="ls -t"
 
 # apps
 alias marked="open -a Marked"
+alias preview="open -a Preview"
