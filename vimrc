@@ -50,6 +50,15 @@ set expandtab           " use spaces instead of tabs by default
 set sts=4 ts=4 sw=4     " default indentation
 set conceallevel=0      " ensure vertical bars are visible in help
 
+" invisibles
+set listchars+=tab:‣\ ,eol:¬
+set list
+
+" Line wrapping
+set nowrap              " disable line wrapping
+set sidescroll=5        " minimal number of columns to scroll horizontally
+set listchars+=precedes:←,extends:→ " visual indicator of long lines
+
 " Use an interesting status line, including shortened filenames (like in tabs)
 set statusline=%{pathshorten(fnamemodify(expand('%f'),':~:.'))}[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
@@ -116,11 +125,6 @@ endif " has("autocmd")
 
 " Relative line numbers
 set relativenumber
-
-" invisibles
-nmap <leader>l :set list!<CR>
-set listchars=tab:‣\ ,eol:¬
-set list
 
 " Set up mappings
 let mapleader=","
