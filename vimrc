@@ -46,6 +46,8 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 set ignorecase          " case insensitive searching
 set smartcase           " override ignorecase when pattern contains upper case characters
+set expandtab           " use spaces instead of tabs by default
+set sts=4 ts=4 sw=4     " default indentation
 set conceallevel=0      " ensure vertical bars are visible in help
 
 " Use an interesting status line, including shortened filenames (like in tabs)
