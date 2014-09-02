@@ -97,10 +97,15 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " Set up text width and format options
+  autocmd FileType text,markdown        setlocal autoindent
+  autocmd FileType text,markdown        setlocal formatoptions+=2
+  autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
+  autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
+  autocmd FileType c,cpp,objc,objcpp    setlocal comments=b:///,sr:/**,mb:*\ ,ex:*/,b://,sr:/*,mb:*,ex:*/
 
-  " Set up some Ruby file types
+  " Set up some file types
+  autocmd BufRead,BufNewFile *.m set filetype=objc
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
 
   " When editing a file, always jump to the last known cursor position.
