@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = mvim -fg --nomru -c \"au VimLeave * !open -a iTerm\" +1
 	trustctime = false
 	pager = less -x5,9
 [alias]
