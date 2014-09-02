@@ -134,6 +134,9 @@ set relativenumber
 " Set up mappings
 let mapleader=","
 
+" Evalue a selection in-place using <C-R>=
+snoremap <C-R><C-R> "-c<C-R>=<C-R>-<CR><Esc>
+
 " window management
 nmap <leader>w :bd<CR>
 nmap <leader><leader>w :%bd<CR>
