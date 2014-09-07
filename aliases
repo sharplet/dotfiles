@@ -1,5 +1,8 @@
 alias reload="exec bash -il"
 
+# editor
+alias vim=mvim
+
 # ANZ
 alias rout="sudo anzroutes.rb"
 
