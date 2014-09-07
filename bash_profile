@@ -53,6 +53,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # PATH
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH=".git/safe/../../bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # environment
