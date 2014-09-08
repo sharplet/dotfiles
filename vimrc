@@ -131,8 +131,8 @@ else
 
 endif " has("autocmd")
 
-" Relative line numbers
-set relativenumber
+set number                      " line numbers
+"set relativenumber              " relative line numbers
 
 " Set up mappings
 let mapleader=","
