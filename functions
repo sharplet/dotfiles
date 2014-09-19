@@ -25,6 +25,6 @@ function xc5()
 }
 function xc6()
 {
-  sudo xcode-select --switch $(ls -dr /Applications/Xcode6-Beta[0-9].app | head)
+  sudo xcode-select --switch /Applications/Xcode6.app
   [ $# -gt 0 ] && xc $@
 }
