@@ -149,6 +149,12 @@ nmap <leader><leader>w :%bd<CR>
 nmap <leader>q :q<CR>
 nmap <leader><leader>q :qa<CR>
 
+" TextMate-style text bubbling
+nmap <C-Up> [e
+nmap <C-Down> ]e
+vmap <C-Up> [e`[V`]
+vmap <C-Down> ]e`[V`]
+
 " Completion
 set wildmenu
 set wildmode=longest,full
