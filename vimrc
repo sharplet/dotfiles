@@ -90,6 +90,10 @@ if &t_Co > 2 || has("gui_running")
   "set hlsearch
 endif
 
+if !has("gui_running")
+  colorscheme twilight256
+endif
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -158,9 +162,6 @@ vmap <C-Down> ]e`[V`]
 " Completion
 set wildmenu
 set wildmode=longest,full
-
-" Color scheme
-colorscheme twilight256
 
 " NERDCommenter
 let g:NERDCustomDelimiters = {
