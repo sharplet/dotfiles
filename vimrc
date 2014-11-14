@@ -28,6 +28,9 @@ set exrc
 " stop unsafe commands running in a .vimrc (http://blog.stwrt.ca/2013/01/23/project-specific-vimrc)
 set secure
 
+" automatically load changes in disk if the buffer has not changed
+set autoread
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
