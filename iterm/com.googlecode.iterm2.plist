@@ -116,15 +116,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1277 535 445 270 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>310 191 924 485 0 0 1440 878 </string>
+	<string>454 274 924 485 0 0 1680 1050 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>3088 562 384 129 2560 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 67 1440 811 0 0 1440 878 </string>
+	<string>115 -837 1438 808 114 -900 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>720 67 717 808 0 0 1440 878 </string>
+	<string>0 211 717 808 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 67 1440 811 0 0 1440 878 </string>
+	<string>144 107 1152 730 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -863,7 +863,7 @@
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -912,7 +912,7 @@
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -926,7 +926,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-09T01:40:19Z</date>
+	<date>2014-11-03T04:36:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -960,7 +960,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
@@ -972,6 +972,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140629</string>
+	<string>2.0.0.20141022</string>
 </dict>
 </plist>
