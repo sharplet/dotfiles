@@ -1,2 +1,2 @@
 tap thoughtbot/formulae
-install hub rcm chisel the_silver_searcher
+install hub vim rcm chisel the_silver_searcher
