@@ -37,8 +37,8 @@ export PROJ_ROOT=$HOME
 export EDITOR=vim
 
 # completion
-source /usr/share/git-core/git-completion.bash
-source /usr/share/git-core/git-prompt.sh
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
 # git
 alias gs="git status"
