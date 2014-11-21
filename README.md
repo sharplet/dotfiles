@@ -8,6 +8,5 @@ Install it on your machine like this:
 ```bash
 $ git clone http://github.com/sharplet/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
-$ brew bundle
 $ ./install.rb
 ```
