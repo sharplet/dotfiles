@@ -60,3 +60,6 @@ export PATH="$HOME/bin:$PATH"
 for dotenv in $(ls $HOME/.*.env 2>/dev/null); do
   . $dotenv
 done
+
+# iTerm2
+source .iterm/shell_integration.bash
