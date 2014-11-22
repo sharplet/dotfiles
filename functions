@@ -18,13 +18,3 @@ function xc()
   local xcpath=$(dirname $(dirname $(xcode-select -p)))
   open -a "$xcpath" $@
 }
-function xc5()
-{
-  sudo xcode-select --switch /Applications/Xcode.app
-  [ $# -gt 0 ] && xc $@
-}
-function xc6()
-{
-  sudo xcode-select --switch /Applications/Xcode6.app
-  [ $# -gt 0 ] && xc $@
-}
