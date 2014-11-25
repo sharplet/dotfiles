@@ -1,1 +1,1 @@
-EXCLUDES="README.md LICENSE Brewfile install.rb"
+EXCLUDES="README.md LICENSE Brewfile install.rb brew-bundle"
