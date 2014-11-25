@@ -62,4 +62,4 @@ for dotenv in $(ls $HOME/.*.env 2>/dev/null); do
 done
 
 # iTerm2
-source .iterm/shell_integration.bash
+source $HOME/.iterm/shell_integration.bash
