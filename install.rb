@@ -2,7 +2,8 @@
 
 # Homebrew
 
-system "sed <Brewfile 's/^/brew /' | sh"
+brew_bundle = File.expand_path("../brew-bundle", __FILE__)
+system(brew_bundle)
 
 # rcm
 

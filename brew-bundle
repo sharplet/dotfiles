@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed 's/^/brew /' <Brewfile | xargs -I{} bash -c "echo '{}' >/dev/stderr && {}"
