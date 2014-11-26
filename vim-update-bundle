@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for plugin in vim/bundle/*; do
+  echo "Updating $plugin..." >/dev/stderr
+  (cd $plugin && git checkout master && git pull)
+done
