@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = vim +1
 	trustctime = false
 	pager = less -x5,9
 [alias]
