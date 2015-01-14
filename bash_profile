@@ -39,6 +39,7 @@ export EDITOR=vim
 # completion
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-flow-completion.bash
 
 # git
 alias gs="git status"
