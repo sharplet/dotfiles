@@ -37,6 +37,10 @@ set backspace=indent,eol,start
 " enable hidden buffers
 set hidden
 
+" put vim swap files into a shared directory rather than the standard '.%.swp'
+" location alongside the file being edited
+set dir=~/.vimswap
+
 if has("vms")
   set nobackup          " do not keep a backup file, use versions instead
 else

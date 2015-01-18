@@ -15,4 +15,4 @@ system "rcup #{rcup_opts}"
 
 # vim backup & undo
 
-system "mkdir -p $HOME/.vim{backup,undo}"
+system "mkdir -p $HOME/.vim{backup,swap,undo}"
