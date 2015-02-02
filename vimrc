@@ -171,6 +171,15 @@ nmap <leader>q :q<CR>
 nmap <leader><leader>q :qa<CR>
 
 
+"" Copy/Paste
+
+" Copy buffer to system clipboard
+nnoremap <C-A><C-C> :%y*<CR>
+
+" Copy current selection to system clipboard
+vnoremap <C-C> "*y
+
+
 "" Git
 
 " switch to the git status buffer in the current window
