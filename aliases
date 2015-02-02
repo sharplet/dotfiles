@@ -1,7 +1,7 @@
 alias reload="exec bash -il"
 
-# editor
-#alias vim=mvim
+# vim
+alias vimgit="vim git-status -c Gstatus -c only -c bd1"
 
 # xcode
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
