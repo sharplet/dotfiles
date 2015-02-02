@@ -7,7 +7,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "twilight"
+let colors_name = "twilight-gui"
 
 let s:grey_blue = '#889ab4'
 let s:light_grey_blue = '#a0a8b0'
