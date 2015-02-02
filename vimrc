@@ -166,6 +166,12 @@ nmap <leader>q :q<CR>
 nmap <leader><leader>q :qa<CR>
 
 
+"" Git
+
+" switch to the git status buffer in the current window
+nmap <leader>s :Gstatus<CR>:only<CR>
+
+
 "" TextMate-style text bubbling
 
 nmap <C-Up> [e
