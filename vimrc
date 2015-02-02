@@ -145,32 +145,49 @@ endif " has("autocmd")
 set number                      " line numbers
 "set relativenumber              " relative line numbers
 
-" Set up mappings
+
+"" Mappings
+
 let mapleader=","
 
-" Evalue a selection in-place using <C-R>=
+
+"" Selection mode
+
+" Evaluate a selection in-place using <C-R>=
 snoremap <C-R><C-R> "-c<C-R>=<C-R>-<CR><Esc>
 
-" window management
+
+"" Normal mode
+
+" Quickly close windows or buffers
 nmap <leader>w :bd<CR>
 nmap <leader><leader>w :%bd<CR>
 nmap <leader>q :q<CR>
 nmap <leader><leader>q :qa<CR>
 
-" TextMate-style text bubbling
+
+"" TextMate-style text bubbling
+
 nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [e`[V`]
 vmap <C-Down> ]e`[V`]
 
-" Completion
+
+"" Completion
+
 set wildmenu
 set wildmode=longest,full
 
-" NERDCommenter
+
+"" NERDCommenter
+
 let g:NERDCustomDelimiters = {
   \ 'ruby': { 'left': '# ' }
 \ }
+
+
+"" Miscellaneous
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
