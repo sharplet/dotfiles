@@ -241,9 +241,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X("Cursor", "708090", "f0e68c", "")
     "CursorIM
     "Directory
-    "DiffAdd
+    call <SID>X("DiffAdded", "00af00", "", "")
     "DiffChange
-    "DiffDelete
+    call <SID>X("DiffRemoved", "af0000", "", "")
     "DiffText
     "ErrorMsg
     "call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
