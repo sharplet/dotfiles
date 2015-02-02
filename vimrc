@@ -123,7 +123,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
 
   " Swift files
-  autocmd BufRead,BufNewFile *.swift set ts=2 sts=2 sw=2
+  autocmd BufRead,BufNewFile *.swift set ts=4 sts=4 sw=4
   autocmd BufRead,BufNewFile *.swift set noexpandtab
   autocmd BufRead,BufNewFile *.swift set smartindent
 
