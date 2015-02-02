@@ -122,6 +122,9 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.m set filetype=objc
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
 
+  " Swift files
+  autocmd BufRead,BufNewFile *.swift set ts=2 sts=2 sw=2 noexpandtab
+
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
