@@ -61,8 +61,8 @@ set sts=4 ts=4 sw=4     " default indentation
 set conceallevel=0      " ensure vertical bars are visible in help
 
 " invisibles
-set listchars+=tab:‣\ ,eol:¬
 set list
+set listchars+=tab:‣\ ,eol:¬
 
 " Line wrapping
 set nowrap              " disable line wrapping
