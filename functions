@@ -18,3 +18,11 @@ function xc()
   local xcpath=$(dirname $(dirname $(xcode-select -p)))
   open -a "$xcpath" $@
 }
+
+# start a new scratch project
+function scratch()
+{
+  readonly scratch_dir="${HOME}/src/scratch/$1"
+  git init "${scratch_dir}"
+  cd "${scratch_dir}"
+}
