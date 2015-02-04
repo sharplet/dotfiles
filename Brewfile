@@ -1,3 +1,3 @@
 update
 tap thoughtbot/formulae
-install hub vim rcm chisel the_silver_searcher selecta icdiff git-flow-avh
+install hub vim rcm chisel selecta icdiff git git-flow-avh
