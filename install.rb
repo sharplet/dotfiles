@@ -13,6 +13,10 @@ rcup_opts = excludes.split(' ').map {|e| "-x #{e}"}.join(' ')
 
 system "rcup #{rcup_opts}"
 
+# scripts
+
+system "ln -s $HOME/.scripts $HOME/bin"
+
 # vim backup & undo
 
 system "mkdir -p $HOME/.vim{backup,swap,undo}"
