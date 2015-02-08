@@ -35,7 +35,7 @@ end
 def read_name_from_user_input(args: [], input: $stdin)
   file ||= args.shift
   file ||= begin
-             print "Note filename: "
+             print "Filename: "
              input.gets.chomp
            end
   file
