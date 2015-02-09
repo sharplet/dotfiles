@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+current_branch = %x(git branch | sed -n 's/^* //p').chomp
+
+if current_branch =~ %r{\A([\w-]+)/([\w-]+)/([\w-]+)\z}
+  jira_no = $2.upcase
+
+  commit_msg_file = ARGV[0]
+  commit_msg = File.read(commit_msg_file)
+  commit_msg.sub!(/\A/, "[#{jira_no}]: ")
+
+  File.write(commit_msg_file, commit_msg)
+end
