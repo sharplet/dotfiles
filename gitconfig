@@ -47,3 +47,5 @@
 	autosquash = true
 [hub]
 	protocol = https
+[init]
+	templatedir = ~/.git/templates
