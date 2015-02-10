@@ -6,6 +6,8 @@ alias vimgit="vim git-status -c Gstatus -c only -c bd1"
 # xcode
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias nukexcode='stupidxcode; sudo find /var/folders ~/Library/Caches -type d -path "*Xcode" -exec rm -rf {} \;'
+alias xcode-beta='sudo xcode-select --switch /Applications/Xcode-Beta.app'
+alias xcode-default='sudo xcode-select --switch /Applications/Xcode.app'
 
 # cocoapods
 alias podl="pod install --no-repo-update"
