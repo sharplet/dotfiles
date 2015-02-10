@@ -1,13 +1,22 @@
 #!/usr/bin/ruby
 
-current_branch = %x(git branch | sed -n 's/^* //p').chomp
+def commit_msg_empty?(msg)
+  msg.lines.grep(/^(?!#).*\S.*^/).empty?
+end
 
-if current_branch =~ %r{\A([\w-]+)/([\w-]+)/([\w-]+)\z}
-  jira_no = $2.upcase
+commit_msg_file, commit_type, ref = *ARGV
 
-  commit_msg_file = ARGV[0]
+case [commit_type, ref]
+when ["commit", "HEAD"]
+  # do nothing when amending
+else
   commit_msg = File.read(commit_msg_file)
-  commit_msg.sub!(/\A/, "[#{jira_no}]: ")
+  current_branch = %x(git branch | sed -n 's/^* //p').chomp
 
-  File.write(commit_msg_file, commit_msg)
+  if commit_msg_empty?(commit_msg) && current_branch =~ %r{\A([\w-]+)/([\w-]+)/([\w-]+)\z}
+    jira_no = $2.upcase
+    jira_msg = commit_msg.sub(/\A/, "[#{jira_no}]: ")
+
+    File.write(commit_msg_file, jira_msg)
+  end
 end
