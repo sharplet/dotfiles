@@ -1,4 +1,32 @@
 #!/usr/bin/ruby
+#
+# Parse the current branch name to extract a JIRA issue number, and prepend it
+# to new commit messages.
+#
+# Branch name can be in one of these formats:
+#
+#   <branch-type>/<jira-no>
+#   <branch-type>/<jira-no>/<topic-branch-description>
+#
+# where <branch-type> is a git-flow-style prefix like feature/, defect/ or
+# release/, and <topic-branch-description> is an arbitrary description of what
+# your topic branch is for.
+#
+# For example, if you checkout a new branch called feature/abc-123/add-foo,
+# your commit message will be prepared like this:
+#
+#   [ABC-123] 
+#   # Please enter the commit message for your changes. Lines starting
+#   # with '#' will be ignored, and an empty message aborts the commit.
+#   # On branch feature/abc-123/add-foo
+#   # Your branch is up-to-date with 'origin/feature/abc-123/add-foo'.
+#   #
+#   # Changes to be committed:
+#   #	new file:   foo
+#
+# If the commit message is pre-populated (e.g., when amending or merging), the
+# hook will correctly detect that and leave it untouched.
+#
 
 def commit_msg_empty?(msg)
   msg.lines.grep(/^(?!#).*\S.*^/).empty?
