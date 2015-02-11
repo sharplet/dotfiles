@@ -14,7 +14,7 @@ else
   commit_msg = File.read(commit_msg_file)
   current_branch = %x(git branch | sed -n 's/^* //p').chomp
 
-  if commit_msg_empty?(commit_msg) && current_branch =~ %r{\A([\w-]+)/([\w-]+)/([\w-]+)\z}
+  if commit_msg_empty?(commit_msg) && current_branch =~ %r{\A([\w-]+)/([[:alpha:]]+-[[:digit:]]+)}
     jira_no = $2.upcase
     jira_msg = commit_msg.sub(/\A/, "[#{jira_no}]: ")
 
