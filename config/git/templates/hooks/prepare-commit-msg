@@ -7,8 +7,9 @@ end
 commit_msg_file, commit_type, ref = *ARGV
 
 case [commit_type, ref]
-when ["commit", "HEAD"]
-  # do nothing when amending
+when ["commit", "HEAD"] # amending
+when ["merge", nil]
+  # do nothing
 else
   commit_msg = File.read(commit_msg_file)
   current_branch = %x(git branch | sed -n 's/^* //p').chomp
