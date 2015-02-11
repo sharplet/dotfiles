@@ -16,7 +16,7 @@ else
 
   if commit_msg_empty?(commit_msg) && current_branch =~ %r{\A([\w-]+)/([[:alpha:]]+-[[:digit:]]+)}
     jira_no = $2.upcase
-    jira_msg = commit_msg.sub(/\A/, "[#{jira_no}]: ")
+    jira_msg = commit_msg.sub(/\A/, "[#{jira_no}] ")
 
     File.write(commit_msg_file, jira_msg)
   end
