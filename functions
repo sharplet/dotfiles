@@ -22,6 +22,11 @@ function xc()
 # start a new scratch project
 function scratch()
 {
+  if [ $# == 0 ]; then
+    echo "fatal: no project name provided" >&2
+    return 1
+  fi
+
   readonly scratch_dir="${HOME}/src/scratch/$1"
   git init "${scratch_dir}"
   cd "${scratch_dir}"
