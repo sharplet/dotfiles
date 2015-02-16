@@ -36,6 +36,7 @@ commit_msg_file, commit_type, ref = *ARGV
 
 case [commit_type, ref]
 when ["commit", "HEAD"] # amending
+when ["message", nil] # fixup
 when ["merge", nil]
   # do nothing
 else
