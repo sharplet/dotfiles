@@ -1,0 +1,12 @@
+#!/usr/bin/ruby
+
+require "shellwords"
+
+note_name = ARGV.shelljoin
+note_cmd = if note_name.empty?
+             "-c Note -c 'normal ggcG'"
+           else
+             "-c 'Note #{note_name}' -c 'normal 3G0cG'"
+           end
+
+exec "vim #{note_cmd} -c startinsert"
