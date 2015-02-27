@@ -112,8 +112,8 @@ if has("autocmd")
   au!
 
   " Set up text width and format options
-  autocmd FileType text,markdown        setlocal autoindent
-  autocmd FileType text,markdown        setlocal formatoptions+=2
+  autocmd FileType text,markdown,notes  setlocal autoindent
+  autocmd FileType text,markdown,notes  setlocal formatoptions+=2
   autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
   autocmd FileType c,cpp,objc,objcpp    setlocal comments=b:///,sr:/**,mb:*\ ,ex:*/,b://,sr:/*,mb:*,ex:*/
@@ -198,6 +198,14 @@ vmap <C-Down> ]e`[V`]
 
 set wildmenu
 set wildmode=longest,full
+
+
+"" vim-notes
+let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_suffix = '.md'
+let g:notes_smart_quotes = 0
+let g:notes_list_bullets = ['-']
+autocmd BufRead,BufNewFile Dropbox/Notes/*.md set filetype=notes
 
 
 "" NERDCommenter
