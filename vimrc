@@ -18,9 +18,23 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Inject pathogen
-call pathogen#infect()
-call pathogen#helptags()
+" Set up Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Keithbsmiley/swift.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+Plugin 'b4winckler/vim-objc'
+Plugin 'tpope/vim-unimpaired'
+
+call vundle#end()
 
 " Enable project-specific .vimrc files
 set exrc
