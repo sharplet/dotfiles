@@ -33,6 +33,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'b4winckler/vim-objc'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()
 
@@ -214,11 +215,20 @@ set wildmode=longest,full
 
 
 "" vim-notes
+
 let g:notes_directories = ['~/Dropbox/Notes']
 let g:notes_suffix = '.md'
 let g:notes_smart_quotes = 0
 let g:notes_list_bullets = ['-']
 autocmd BufRead,BufNewFile Dropbox/Notes/*.md set filetype=notes
+
+
+"" RSpec.vim mappings
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 
 "" NERDCommenter
