@@ -4,7 +4,7 @@ alias reload="exec bash -il"
 alias vimgit="vim git-status -c Gstatus -c only -c bd1"
 
 # xcode
-alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData'
+alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData && sudo find /var/folders -name "*[Xx]code*" -o -name "*llvm*" | xargs sudo rm -rf'
 alias nukexcode='stupidxcode; sudo find /var/folders ~/Library/Caches -type d -path "*Xcode" -exec rm -rf {} \;'
 alias xcode-beta='sudo xcode-select --switch /Applications/Xcode-Beta.app'
 alias xcode-default='sudo xcode-select --switch /Applications/Xcode.app'
