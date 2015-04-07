@@ -34,6 +34,8 @@ Plugin 'xolox/vim-notes'
 Plugin 'b4winckler/vim-objc'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 
