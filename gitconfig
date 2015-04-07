@@ -1,7 +1,6 @@
 [core]
 	editor = vim +1 -c normal\\ $
 	trustctime = false
-	pager = less -x5,9
 [alias]
 	s = status
 	c = commit
