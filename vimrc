@@ -130,6 +130,7 @@ if has("autocmd")
   " Set up text width and format options
   autocmd FileType text,markdown,notes  setlocal autoindent
   autocmd FileType text,markdown,notes  setlocal formatoptions+=2
+  autocmd FileType text,markdown,notes  setlocal sts=4 ts=4 sw=4
   autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
   autocmd FileType c,cpp,objc,objcpp    setlocal comments=b:///,sr:/**,mb:*\ ,ex:*/,b://,sr:/*,mb:*,ex:*/
@@ -139,8 +140,8 @@ if has("autocmd")
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
 
   " Swift files
-  autocmd BufRead,BufNewFile *.swift set ts=4 sts=4 sw=4
-  autocmd BufRead,BufNewFile *.swift set noexpandtab
+  autocmd BufRead,BufNewFile *.swift set ts=2 sts=2 sw=2
+  autocmd BufRead,BufNewFile *.swift set expandtab
   autocmd BufRead,BufNewFile *.swift set smartindent
 
   " When editing a file, always jump to the last known cursor position.
