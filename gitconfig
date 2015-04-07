@@ -30,6 +30,7 @@
 	logf = !git log --ignore-missing ^origin/{master,develop,development} HEAD
 	lf = !git logf --oneline
 	dd = !git difftool -y --extcmd 'icdiff --highlight --line-numbers'
+	intend = add --intent-to-add
 [color]
 	diff = true
 	ui = false
