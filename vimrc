@@ -179,6 +179,15 @@ let mapleader=","
 snoremap <C-R><C-R> "-c<C-R>=<C-R>-<CR><Esc>
 
 
+"" Navigation
+
+" gf will edit a new file if it doesn't exist
+map gf :e <cfile><CR>
+
+" Move to the last character on the last line
+nmap <C-G> <C-End>
+
+
 "" Normal mode
 
 " Quickly close windows or buffers
