@@ -31,6 +31,7 @@
 	lf = !git logf --oneline
 	dd = !git difftool -y --extcmd 'icdiff --highlight --line-numbers'
 	intend = add --intent-to-add
+	sel = !git branch | sed -En 's/^  (.+)$/\\1/p' | selecta | xargs git checkout
 [color]
 	diff = true
 	ui = false
