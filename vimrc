@@ -164,8 +164,8 @@ else
 
 endif " has("autocmd")
 
-set number                      " line numbers
-"set relativenumber              " relative line numbers
+set relativenumber              " relative line numbers
+set number                      " current line shows actual number, instead of 0
 
 
 "" Mappings
