@@ -51,3 +51,7 @@
 	protocol = https
 [init]
 	templatedir = ~/.config/git/templates
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
