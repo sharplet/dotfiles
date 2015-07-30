@@ -20,10 +20,10 @@ set nocompatible
 
 " Set up Vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
+call vundle#begin("~/.dotfiles/vim/bundle")
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Keithbsmiley/swift.vim'
