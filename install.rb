@@ -2,8 +2,14 @@
 
 # Homebrew
 
-brew_bundle = File.expand_path("../brew-bundle", __FILE__)
-system(brew_bundle)
+def homebrew?
+  system("which brew 2>/dev/null")
+end
+
+if homebrew?
+  brew_bundle = File.expand_path("../brew-bundle", __FILE__)
+  system(brew_bundle)
+end
 
 # rcm
 
@@ -15,8 +21,8 @@ system "rcup #{rcup_opts}"
 
 # scripts
 
-system "ln -s $HOME/.scripts $HOME/bin"
+system "ln -sf $HOME/bin $HOME/.scripts"
 
 # vim backup & undo
 
-system "mkdir -p $HOME/.vim{backup,swap,undo}"
+system "mkdir -p $HOME/.vimbackup $HOME/.vimswap $HOME/.vimundo"
