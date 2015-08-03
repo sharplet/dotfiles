@@ -172,6 +172,15 @@ endif " has("autocmd")
 set relativenumber              " relative line numbers
 set number                      " current line shows actual number, instead of 0
 
+set splitbelow                  " horizontal splits open below the current window
+set splitright                  " vertical splits open to the right of the current window
+
+
+"" File browsing
+
+let g:netrw_liststyle=3         " use netrw's tree view by default
+map <leader>v :20Vexplore<CR>   " open a narrow split for file browsing
+
 
 "" Mappings
 
