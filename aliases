@@ -23,7 +23,9 @@ alias rt="rake test"
 alias src="cd $HOME/src"
 
 # shell
-alias ls="ls -G"
+if [ "$(uname)" == "Darwin" ]; then
+  alias ls="ls -G"
+fi
 alias ll="ls -l"
 alias lt="ls -t"
 
