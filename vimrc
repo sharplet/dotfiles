@@ -137,6 +137,8 @@ if has("autocmd")
   autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
   autocmd FileType c,cpp,objc,objcpp    setlocal comments=b:///,sr:/**,mb:*\ ,ex:*/,b://,sr:/*,mb:*,ex:*/
+  autocmd FileType c,cpp,objc,objcpp    setlocal sts=2 ts=2 sw=2 expandtab
+  autocmd FileType vim,ruby             setlocal sts=2 ts=2 sw=2 expandtab
 
   " Set up some file types
   autocmd BufRead,BufNewFile *.m set filetype=objc
