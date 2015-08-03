@@ -56,11 +56,6 @@ alias gs="git status"
 alias g=git
 eval "$(hub alias -s)"
 
-# ruby
-export GEM_HOME=$HOME/.gems/2.0.0
-export GEM_PATH=$GEM_HOME
-export PATH=$GEM_HOME/bin:$PATH
-
 # prompt
 export PS1='\h \W$(__git_ps1)$ '
 
