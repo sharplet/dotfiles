@@ -82,21 +82,15 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSColorPanelMode</key>
-	<string>0</string>
-	<key>NSColorPickerSlidersDefaults</key>
-	<string>0</string>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
-	<key>NSFontPanelPreviewHeight</key>
-	<real>0.0</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/src/sharplet/dotfiles</string>
+	<string>~/.dotfiles/iterm</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
+	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
 	<key>NSTableView Columns KeyBingingTable</key>
 	<array>
@@ -109,37 +103,29 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
-	<key>NSToolbar Configuration Terminal Toolbar</key>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
 	<dict>
-		<key>TB Display Mode</key>
-		<integer>1</integer>
-		<key>TB Icon Size Mode</key>
-		<integer>1</integer>
 		<key>TB Is Shown</key>
-		<integer>0</integer>
-		<key>TB Size Mode</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>368 342 217 309 0 0 1680 1050 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>584 347 918 464 0 0 1680 1027 </string>
+	<string>443 410 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>760 786 400 129 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 491 620 392 0 0 1680 1027 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>127 443 592 584 0 0 1680 1027 </string>
+	<string>610 416 700 622 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>760 380 920 622 0 0 1680 1027 </string>
+	<string>1 30 1438 842 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>844 62 834 963 0 0 1680 1027 </string>
+	<string>2 249 920 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 85 1680 942 0 0 1680 1027 </string>
+	<string>1 155 920 622 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -875,12 +861,29 @@
 			<string>/Users/adsharp</string>
 		</dict>
 	</array>
-	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncLastTipTime</key>
+	<real>459326343.16225302</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>000</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -927,7 +930,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/adsharp/src/sharplet/dotfiles/iterm</string>
+	<string>/Users/adamsharp/.dotfiles/iterm</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -947,7 +950,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-01-14T09:52:55Z</date>
+	<date>2015-07-22T05:53:59Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -955,7 +960,7 @@
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
-	<false/>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.40000000596046448</real>
 	<key>SwitchTabModifier</key>
@@ -970,8 +975,6 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1405419392</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -995,7 +998,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150108-nightly</string>
+	<string>2.9.20150715-nightly</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>
