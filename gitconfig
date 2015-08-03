@@ -32,7 +32,7 @@
 	dd = !git difftool -y --extcmd 'icdiff --highlight --line-numbers'
 	intend = add --intent-to-add
 	sha = log -1 --pretty=format:%H
-	sel = !git branch | sed -En 's/^  (.+)$/\\1/p' | selecta | xargs git checkout
+	go = !git branch | sed -En 's/^  (.+)$/\\1/p' | selecta | xargs -t git checkout
 [color]
 	diff = true
 	ui = false
