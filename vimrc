@@ -27,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Keithbsmiley/swift.vim'
+Plugin 'sharplet/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'xolox/vim-misc'
@@ -233,6 +234,13 @@ let g:notes_suffix = '.md'
 let g:notes_smart_quotes = 0
 let g:notes_list_bullets = ['-']
 autocmd BufRead,BufNewFile Dropbox/Notes/*.md set filetype=notes
+
+
+"" vim-dispatch
+
+let g:dispatch_format='%f:%l: %m,%+I%.%#'
+
+command! -nargs=* -range=0 Todo Dispatch todogrep <q-args>
 
 
 "" RSpec.vim mappings
