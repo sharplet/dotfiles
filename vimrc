@@ -139,7 +139,7 @@ if has("autocmd")
 
   " Set up some file types
   autocmd BufRead,BufNewFile *.m set filetype=objc
-  autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile set filetype=ruby
+  autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile,Vagrantfile set filetype=ruby
 
   " Swift files
   autocmd BufRead,BufNewFile *.swift set ts=2 sts=2 sw=2

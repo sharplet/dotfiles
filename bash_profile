@@ -7,6 +7,11 @@ set -o vi
 # functions
 [ -f "$HOME/.functions" ] && source $HOME/.functions
 
+[ -f "$HOME/.profile" ] && source $HOME/.profile
+
+# private settings
+[ -f "$HOME/.profile.private" ] && source $HOME/.profile.private
+
 # present a project selector and change to the selected directory
 function go()
 {
@@ -37,9 +42,14 @@ export PROJ_ROOT=$HOME
 export EDITOR=vim
 
 # completion
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+if [ -d "/Library/Developer/CommandLineTools" ]; then
+  source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+fi
+
+if [ -d "/usr/local/etc/bash_completion.d" ]; then
+  source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+fi
 
 # git
 alias gs="git status"
@@ -56,6 +66,9 @@ export PS1='\h \W$(__git_ps1)$ '
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # PATH
 export PATH="$PATH:/usr/local/share/npm/bin"
