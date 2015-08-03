@@ -33,6 +33,8 @@
 	intend = add --intent-to-add
 	sha = log -1 --pretty=format:%H
 	go = !git branch | sed -En 's/^  (.+)$/\\1/p' | selecta | xargs -t git checkout
+	g = log --oneline --graph --decorate
+	ga = log --all --oneline --graph --decorate
 [color]
 	diff = true
 	ui = false
