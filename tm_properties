@@ -3,8 +3,8 @@ invisiblesMap = "~ \t‣"
 showInvisibles = true
 
 // Fonts
-fontName = "Hasklig-Medium"
-fontSize = 13
+fontName = "Inconsolata-dz"
+fontSize = 12
 
 // Tabs
 softTabs = true
