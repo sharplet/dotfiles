@@ -38,6 +38,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'cfdrake/vim-carthage'
 
 call vundle#end()
 
