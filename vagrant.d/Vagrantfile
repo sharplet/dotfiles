@@ -1,0 +1,10 @@
+Vagrant::Config.run do |config|
+  config.vm.share_folder "v-dotfiles", "/home/vagrant/.dotfiles", File.expand_path("~/.dotfiles")
+  config.vm.provision :shell, :path => File.expand_path("../scripts/provision", __FILE__)
+  config.ssh.forward_agent = true
+
+  Dir.glob(File.join(ENV["HOME"], ".ssh/id_rsa*")).each do |keyfile|
+    destination = keyfile.sub(/^#{ENV["HOME"]}/, "/vagrant/home")
+    config.vm.provision :file, destination: destination, source: keyfile
+  end
+end
