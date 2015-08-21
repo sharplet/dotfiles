@@ -39,6 +39,13 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'cfdrake/vim-carthage'
+Plugin 'SirVer/ultisnips'
+Plugin 'sharplet/vim-snippets'
+
+call system("uname | grep -qi darwin")
+if !v:shell_error
+  Plugin 'Valloric/YouCompleteMe'
+end
 
 call vundle#end()
 
@@ -180,6 +187,13 @@ set splitright                  " vertical splits open to the right of the curre
 
 let g:netrw_liststyle=3         " use netrw's tree view by default
 map <leader>v :20Vexplore<CR>   " open a narrow split for file browsing
+
+
+"" Snippets
+
+let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 
 
 "" Mappings
