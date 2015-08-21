@@ -1,5 +1,3 @@
-# git ls-files --others --exclude-from=.git/info/exclude
-# Lines that start with '#' are comments.
-
-# Mac OS X
 .DS_Store
+UserInterfaceState.xcuserstate
+xcuserdata/
