@@ -51,11 +51,6 @@ if [ -d "/usr/local/etc/bash_completion.d" ]; then
   source /usr/local/etc/bash_completion.d/git-flow-completion.bash
 fi
 
-# git
-alias gs="git status"
-alias g=git
-eval "$(hub alias -s)"
-
 # prompt
 export PS1='\h \W$(__git_ps1)$ '
 

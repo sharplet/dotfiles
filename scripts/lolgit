@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -t 1 ]; then
+  echo LOL >&2
+  exit 1
+else
+  real_git=$(type -a git | head -2 | tail -1 | cut -d" " -f 3)
+  exec "$real_git" ${*}
+fi
