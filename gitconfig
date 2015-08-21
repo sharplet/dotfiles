@@ -58,3 +58,5 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[commit]
+	template = ~/.gitmessage
