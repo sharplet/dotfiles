@@ -25,6 +25,8 @@ alias src="cd $HOME/src"
 # shell
 if [ "$(uname)" == "Darwin" ]; then
   alias ls="ls -G"
+elif uname -v | grep -iq ubuntu; then
+  alias ls="ls --color=always"
 fi
 alias ll="ls -l"
 alias lt="ls -t"
