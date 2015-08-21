@@ -4,7 +4,7 @@ Vagrant::Config.run do |config|
   config.ssh.forward_agent = true
 
   Dir.glob(File.join(ENV["HOME"], ".ssh/id_rsa*")).each do |keyfile|
-    destination = keyfile.sub(/^#{ENV["HOME"]}/, "/vagrant/home")
+    destination = keyfile.sub(/^#{ENV["HOME"]}/, "/home/vagrant")
     config.vm.provision :file, destination: destination, source: keyfile
   end
 end
