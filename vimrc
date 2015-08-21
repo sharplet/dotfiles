@@ -224,6 +224,9 @@ nmap <leader><leader>w :%bd<CR>
 nmap <leader>q :q<CR>
 nmap <leader><leader>q :qa<CR>
 
+" Open a tag in a vertical split
+nmap <C-\> :vsp<CR>:exec("tag " . expand("<cword>"))<CR>
+
 
 "" Copy/Paste
 
