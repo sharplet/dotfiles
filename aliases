@@ -35,3 +35,12 @@ alias lt="ls -t"
 # apps
 alias marked="open -a Marked"
 alias preview="open -a Preview"
+
+# git
+alias s="git status"
+alias c="git commit --verbose"
+alias d="git diff"
+alias dc="git diff --cached"
+alias gap="git add --patch"
+alias gp="git push"
+alias gpub="git publish"
