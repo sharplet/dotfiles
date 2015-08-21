@@ -4,7 +4,7 @@ showInvisibles = true
 
 // Fonts
 fontName = "Inconsolata-dz"
-fontSize = 12
+fontSize = 11
 
 // Tabs
 softTabs = true

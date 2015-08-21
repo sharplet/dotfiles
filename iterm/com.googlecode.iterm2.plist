@@ -40,10 +40,12 @@
 	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
+	<key>FlashTabBarInFullscreen</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FsTabDelay</key>
-	<real>1</real>
+	<real>1.0900000000000001</real>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
 	<key>HiddenAdvancedFontRendering</key>
@@ -115,17 +117,21 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>443 410 606 456 0 0 1440 877 </string>
+	<string>674 302 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 786 400 129 0 0 1920 1177 </string>
+	<string>-497 91 400 129 -1280 -58 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>610 416 700 622 0 0 1920 1177 </string>
+	<string>370 192 700 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 30 1438 842 0 0 1440 877 </string>
+	<string>1 8 1438 864 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 249 920 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1 155 920 622 0 0 1280 777 </string>
+	<key>NeverWarnAboutShortLivedSessions_E9D2C1E4-7507-4FCF-B5FC-78C6061ED2DE</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_E9D2C1E4-7507-4FCF-B5FC-78C6061ED2DE_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -686,7 +692,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Inconsolata-dz 12</string>
+			<string>Inconsolata-dz 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -850,7 +856,7 @@
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Italic Font</key>
-			<false/>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -866,11 +872,13 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>459326343.16225302</real>
+	<real>459935590.97281402</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>0000</string>
@@ -883,6 +891,8 @@
 		<string>0006</string>
 		<string>0007</string>
 		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
@@ -950,13 +960,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-22T05:53:59Z</date>
+	<date>2015-08-18T00:03:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -967,6 +979,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyle</key>
+	<integer>0</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -998,7 +1012,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150715-nightly</string>
+	<string>2.9.20150812-nightly</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>
