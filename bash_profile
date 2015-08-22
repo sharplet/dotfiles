@@ -57,8 +57,10 @@ export PS1='\h \W$(__git_ps1)$ '
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# rbenv
+if which rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # PATH
 export PATH="$PATH:/usr/local/share/npm/bin"
