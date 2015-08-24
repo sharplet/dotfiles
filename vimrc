@@ -138,7 +138,7 @@ if has("autocmd")
   au!
 
   " Set up text width and format options
-  autocmd FileType text,markdown,notes  setlocal autoindent wrap linebreak
+  autocmd FileType text,markdown,notes  setlocal autoindent wrap linebreak breakindent breakindentopt=shift:2
   autocmd FileType text,markdown,notes  setlocal formatoptions+=2
   autocmd FileType text,markdown,notes  setlocal sts=4 ts=4 sw=4
   autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
