@@ -1,6 +1,7 @@
 set nocompatible
 
 set backspace=indent,eol,start
+set colorcolumn=80
 set linebreak
 set mouse=a
 set number

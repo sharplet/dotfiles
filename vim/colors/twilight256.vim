@@ -284,6 +284,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
 
+    call <SID>X("ColorColumn", "", "424242", "")
+
     " invisible characters
     call <SID>X("NonText", "424242", "", "")
     call <SID>X("SpecialKey", "424242", "", "")
