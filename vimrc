@@ -32,7 +32,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
 Plugin 'b4winckler/vim-objc'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'thoughtbot/vim-rspec'
@@ -42,9 +41,12 @@ Plugin 'cfdrake/vim-carthage'
 Plugin 'SirVer/ultisnips'
 Plugin 'sharplet/vim-snippets'
 
+"Plugin 'jerrymarino/xcodebuild.vim'
+
 call system("uname | grep -qi darwin")
 if !v:shell_error
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'file:///Users/adamsharp/src/sharplet/vim-xcodebuild'
 end
 
 call vundle#end()
@@ -138,10 +140,10 @@ if has("autocmd")
   au!
 
   " Set up text width and format options
-  autocmd FileType text,markdown,notes  setlocal autoindent wrap linebreak breakindent breakindentopt=shift:2
-  autocmd FileType text,markdown,notes  setlocal formatoptions+=2
-  autocmd FileType text,markdown,notes  setlocal sts=4 ts=4 sw=4
-  autocmd FileType text,markdown,c,cpp,objc,objcpp setlocal textwidth=78
+  autocmd FileType text,markdown        setlocal textwidth=0
+  autocmd FileType text,markdown        setlocal autoindent wrap linebreak breakindent
+  autocmd FileType text,markdown        setlocal sts=4 ts=4 sw=4 expandtab
+  autocmd FileType c,cpp,objc,objcpp    setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
   autocmd FileType c,cpp,objc,objcpp    setlocal comments=b:///,sr:/**,mb:*\ ,ex:*/,b://,sr:/*,mb:*,ex:*/
   autocmd FileType c,cpp,objc,objcpp    setlocal sts=2 ts=2 sw=2 expandtab
@@ -257,15 +259,6 @@ set wildmenu
 set wildmode=longest,full
 
 
-"" vim-notes
-
-let g:notes_directories = ['~/Dropbox/Notes']
-let g:notes_suffix = '.md'
-let g:notes_smart_quotes = 0
-let g:notes_list_bullets = ['-']
-autocmd BufRead,BufNewFile Dropbox/Notes/*.md set filetype=notes
-
-
 "" vim-dispatch
 
 let g:dispatch_format='%f:%l: %m,%+I%.%#'
@@ -281,6 +274,18 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+"" Qargs (http://vimcasts.org/episodes/project-wide-find-and-replace/)
+
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
 
 
 "" grepping
