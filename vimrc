@@ -40,6 +40,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'cfdrake/vim-carthage'
 Plugin 'SirVer/ultisnips'
 Plugin 'sharplet/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
 
 "Plugin 'jerrymarino/xcodebuild.vim'
 
