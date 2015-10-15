@@ -65,6 +65,7 @@ fi
 # PATH
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH=".git/safe/../../bin:$PATH"
+export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # environment
