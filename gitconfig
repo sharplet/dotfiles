@@ -42,7 +42,6 @@
 	ui = false
 [user]
 	name = Adam Sharp
-	email = adsharp@me.com
 [rerere]
 	enabled = true
 [push]
