@@ -90,7 +90,7 @@ fail_on_output() {
 ## Main
 
 declare -a includes
-declare -a excludes
+declare -a excludes=("-e" "$0")
 declare format_mode="none"
 declare search_mode="default"
 declare keywords="FIXME:|TODO:"
