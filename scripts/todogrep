@@ -12,7 +12,7 @@
 #   -f <format>     Format output: use 'warn' to format like a compiler warning (also preventing a non-zero exit status).
 #                   Default value is 'none'.
 #   -m <mode>       Search mode:
-#                    - 'git'       Use `git ls-files` to only search tracked files.
+#                    - 'git'       Use `git ls-files` to search both tracked and untracked files, but skip deleted files and those ignored by git.
 #                    - 'find'      Recursively search the current directory for files.
 #                    - 'default'   This is the default value, which tries to use 'git' when inside a git repository, and falls back to 'find'.
 
@@ -29,7 +29,7 @@ find_files() {
   fi
 
   if [ "${search_mode}" = "git" ]; then
-    git ls-files
+    git ls-files -cmo
   elif [ "${search_mode}" = "find" ]; then
     find . -type f | sed 's/^.\///'
   else
