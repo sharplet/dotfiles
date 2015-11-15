@@ -11,17 +11,19 @@
 #   -e <pattern>    Exclude files matching <pattern> (multiple patterns can be specified)
 #   -f <format>     Format output: use 'warn' to format like a compiler warning (also preventing a non-zero exit status).
 #                   Default value is 'none'.
-#   -m <mode>       Search mode: defaults to 'git', and falls back to recursively searching files in the current directory.
-#                   You can also specify 'find' to perform a recursive search relative to the current working directory.
+#   -m <mode>       Search mode:
+#                    - 'git'       Use `git ls-files` to only search tracked files.
+#                    - 'find'      Recursively search the current directory for files.
+#                    - 'default'   This is the default value, which tries to use 'git' when inside a git repository, and falls back to 'find'.
 
 ## Finding files
 
 find_files() {
   search_mode=$1
 
-  if [ "${search_mode}" != "git" ]; then
+  if [ "${search_mode}" = "default" ]; then
     if in_git_dir
-    then true # no-op
+    then search_mode="git"
     else search_mode="find"
     fi
   fi
@@ -90,7 +92,7 @@ fail_on_output() {
 declare -a includes
 declare -a excludes
 declare format_mode="none"
-declare search_mode="git"
+declare search_mode="default"
 declare keywords="FIXME:|TODO:"
 
 while getopts e:i:f:m: opt; do
