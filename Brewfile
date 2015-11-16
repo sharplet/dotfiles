@@ -1,3 +1,4 @@
 update
 tap thoughtbot/formulae
-install hub vim rcm chisel icdiff git git-flow-avh ag
+tap sharplet/formulae
+install hub vim rcm chisel icdiff git git-flow-avh ag todogrep
