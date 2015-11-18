@@ -30,10 +30,6 @@ function go()
     touch "$dest" && cd "$dest"
   fi
 }
-export PROJ_ROOT=$HOME
-
-# editor
-export EDITOR=vim
 
 # completion
 if [ -d "/Library/Developer/CommandLineTools" ]; then
@@ -47,24 +43,10 @@ fi
 # prompt
 export PS1='\h \W$(__git_ps1)$ '
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # rbenv
 if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
-
-# PATH
-export PATH="$PATH:/usr/local/share/npm/bin"
-export PATH=".git/safe/../../bin:$PATH"
-export PATH="$HOME/.gem/bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-
-# environment
-for dotenv in $(ls $HOME/.*.env 2>/dev/null); do
-  . $dotenv
-done
 
 # iTerm2
 source $HOME/.iterm/shell_integration.bash
