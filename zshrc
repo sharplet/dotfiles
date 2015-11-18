@@ -14,4 +14,5 @@ compinit
 
 [ -f "$HOME/.profile" ] && source "$HOME/.profile"
 
-PROMPT="%n@%m %2~$(__git_ps1)%% "
+setopt promptsubst
+PROMPT='%n@%m %2~$(__git_ps1)%% '
