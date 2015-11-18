@@ -1,16 +1,10 @@
 # vi command line editing
 set -o vi
 
-# aliases
-[ -f "$HOME/.aliases" ] && source $HOME/.aliases
-
 # functions
 [ -f "$HOME/.functions" ] && source $HOME/.functions
 
 [ -f "$HOME/.profile" ] && source $HOME/.profile
-
-# private settings
-[ -f "$HOME/.profile.private" ] && source $HOME/.profile.private
 
 # present a project selector and change to the selected directory
 function go()
@@ -44,7 +38,6 @@ export EDITOR=vim
 # completion
 if [ -d "/Library/Developer/CommandLineTools" ]; then
   source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 fi
 
 if [ -d "/usr/local/etc/bash_completion.d" ]; then
