@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Generate random base64 encoded bytes.
+#
+# -n: number of bytes to generate
+
+declare -i count=64
+
+while getopts n: opt; do
+  case ${opt} in
+    n)
+      count=${OPTARG}
+      ;;
+  esac
+done
+
+dd="dd bs=${count} count=1"
+
+exec openssl base64 -in <(${dd} </dev/urandom 2>/dev/null) | paste -s -d\0 - | ${dd} 2>/dev/null
