@@ -21,7 +21,7 @@ set nocompatible
 " Set up Vundle
 filetype off
 set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-call vundle#begin("~/.dotfiles/vim/bundle")
+call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
