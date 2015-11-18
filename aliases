@@ -2,7 +2,7 @@ alias reload="exec bash -il"
 
 # vim
 alias vimgit="vim git-status -c Gstatus -c only -c bd1"
-alias git=lolgit
+alias git=hub
 
 # xcode
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/* && sudo find /var/folders -name "*[Xx]code*" -o -name "*llvm*" | xargs sudo rm -rf'
