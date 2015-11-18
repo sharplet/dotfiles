@@ -19,3 +19,6 @@ setopt promptsubst
 PROMPT='%n@%m %2~$(__git_ps1)%% '
 
 source "$HOME/.iterm/shell_integration.zsh"
+
+# batch file renaming
+autoload -U zmv
