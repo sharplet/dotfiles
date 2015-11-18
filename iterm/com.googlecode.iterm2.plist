@@ -105,7 +105,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -117,13 +117,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>674 302 606 456 0 0 1280 777 </string>
+	<string>1022 1504 606 456 -292 800 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>-497 91 400 129 -1280 -58 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 192 700 622 0 0 1440 877 </string>
+	<string>290 117 700 622 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 8 1438 864 0 0 1440 877 </string>
+	<string>241 117 920 587 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 249 920 622 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -843,6 +843,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<false/>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -877,6 +879,12 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
+	<true/>
+	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
+	<integer>0</integer>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>466562065.35502398</real>
 	<key>NoSyncTipsDisabled</key>
 	<true/>
 	<key>NoSyncTipsToNotShow</key>
@@ -960,7 +968,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-18T00:03:01Z</date>
+	<date>2015-10-15T00:32:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1012,7 +1020,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150812-nightly</string>
+	<string>2.9.20151006-nightly</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>
