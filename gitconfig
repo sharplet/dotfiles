@@ -37,6 +37,8 @@
 	ga = log --all --oneline --graph --decorate
 	gf = g --ignore-missing ^origin/master ^origin/develop ^origin/development HEAD
 	publish = !git push -u origin $(git branch | sed -n 's/^\\* //p')
+	proxy = ![ -n "$GIT_PROXY" ] && git config --global http.proxy $GIT_PROXY || echo "error: GIT_PROXY not set"
+	noproxy = config --global --unset http.proxy
 [color]
 	diff = true
 	ui = false
