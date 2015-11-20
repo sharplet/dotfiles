@@ -20,7 +20,6 @@ function go()
       | xargs -I{} stat -f '%m %N' '{}' | sort -nr \          # sort by most recently modified
       | sed -E 's,^[0-9]+ ,,' \                               # strip the prefixed modification time
       | sed -E "s,^$base/(src/)?,," \                         # remove the directory prefix for display
-      | sed 's,/.git$,,' \                                    # strip .git suffix (again?)
       | selecta
   )
 
