@@ -14,12 +14,12 @@ function go()
   excludes='.cocoapods|.vim/bundle'
 
   dir=$(
-    find -H $base ${findopts[*]} -path '*/.git' 2>/dev/null \ # find all git repositories ('-H' means follow symlinks)
-      | sed 's,/.git$,,' \                                    # strip the .git suffix
-      | grep -vE "$excludes" \                                # exclude some noise
-      | xargs -I{} stat -f '%m %N' '{}' | sort -nr \          # sort by most recently modified
-      | sed -E 's,^[0-9]+ ,,' \                               # strip the prefixed modification time
-      | sed -E "s,^$base/(src/)?,," \                         # remove the directory prefix for display
+    find -H $base ${findopts[*]} -path '*/.git' 2>/dev/null \
+      | sed 's,/.git$,,' \
+      | grep -vE "$excludes" \
+      | xargs -I{} stat -f '%m %N' '{}' | sort -nr \
+      | sed -E 's,^[0-9]+ ,,' \
+      | sed -E "s,^$base/(src/)?,," \
       | selecta
   )
 
