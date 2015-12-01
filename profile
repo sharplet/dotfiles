@@ -9,9 +9,12 @@ fi
 export EDITOR=vim
 export PROJ_ROOT=$HOME
 
+eval "$(rbenv init -)"
+
 # PATH
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH=".git/safe/../../bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/bin:$PATH"
