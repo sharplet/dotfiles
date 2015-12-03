@@ -1,0 +1,2 @@
+#!/bin/sh
+xcrun launch-with-toolchain /Library/Developer/Toolchains/swift-latest.xctoolchain
