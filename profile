@@ -11,6 +11,8 @@ export PROJ_ROOT=$HOME
 
 eval "$(rbenv init -)"
 
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+
 # PATH
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
