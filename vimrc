@@ -42,14 +42,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'sharplet/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 
-"Plugin 'jerrymarino/xcodebuild.vim'
-
-call system("uname | grep -qi darwin")
-if !v:shell_error
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'file:///Users/adamsharp/src/sharplet/vim-xcodebuild'
-end
-
 call vundle#end()
 
 " Enable project-specific .vimrc files
