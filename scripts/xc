@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Open the named file in the current Xcode. Defaults to '.'.
+
+set -e
+
+xcpath=$(dirname $(dirname $(xcode-select -p)))
+exec open -a "$xcpath" ${@:-.}

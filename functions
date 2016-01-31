@@ -45,13 +45,6 @@ function elf()
   [ "x$EDITOR" != "x" ] && $EDITOR "$(lf)"
 }
 
-# open in Xcode
-function xc()
-{
-  xcpath=$(dirname $(dirname $(xcode-select -p)))
-  open -a "$xcpath" $@
-}
-
 # start a new scratch project
 function scratch()
 {
