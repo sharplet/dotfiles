@@ -41,6 +41,7 @@
 	noproxy = config --global --unset http.proxy
 	pr = !hub pull-request
 	ff = merge --ff-only
+	remaster = pull -r origin master
 [color]
 	diff = true
 	ui = false
