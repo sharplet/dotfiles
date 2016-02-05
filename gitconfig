@@ -3,7 +3,7 @@
 	trustctime = false
 [alias]
 	s = status
-	c = commit
+	c = commit --verbose
 	b = branch
 	co = checkout
 	r = rebase
