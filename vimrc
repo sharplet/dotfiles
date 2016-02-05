@@ -143,6 +143,7 @@ if has("autocmd")
 
   " Set up some file types
   autocmd BufRead,BufNewFile *.m set filetype=objc
+  autocmd BufRead,BufNewFile PULLREQ_EDITMSG set filetype=gitcommit
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile,Vagrantfile set filetype=ruby
 
   " Swift files
