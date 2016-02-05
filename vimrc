@@ -135,7 +135,7 @@ if has("autocmd")
 
   " Set up text width and format options
   autocmd FileType text,markdown        setlocal textwidth=0
-  autocmd FileType text,markdown        setlocal autoindent wrap linebreak breakindent
+  autocmd FileType text,markdown        setlocal autoindent wrap
   autocmd FileType text,markdown        setlocal sts=4 ts=4 sw=4 expandtab
   autocmd FileType c,cpp,objc,objcpp    setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
@@ -163,6 +163,9 @@ if has("autocmd")
   augroup END
 
 else
+
+  set linebreak                 " when soft wrapping is enabled, break lines at word boundaries
+  set breakindent               " when soft wrapping is enabled, keep wrapped lines at same indent level
 
   set autoindent                " always set autoindenting on
 
