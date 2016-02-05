@@ -42,6 +42,7 @@
 	pr = !hub pull-request
 	ff = merge --ff-only
 	remaster = pull -r origin master
+	ap = add --patch
 [color]
 	diff = true
 	ui = false
