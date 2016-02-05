@@ -40,6 +40,7 @@
 	proxy = ![ -n "$PROXY" ] && git config --global http.proxy $PROXY || echo "error: PROXY not set"
 	noproxy = config --global --unset http.proxy
 	pr = !hub pull-request
+	ff = merge --ff-only
 [color]
 	diff = true
 	ui = false
