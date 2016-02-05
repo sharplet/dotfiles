@@ -39,6 +39,7 @@
 	publish = !git push -u origin $(git branch | sed -n 's/^\\* //p')
 	proxy = ![ -n "$PROXY" ] && git config --global http.proxy $PROXY || echo "error: PROXY not set"
 	noproxy = config --global --unset http.proxy
+	pr = !hub pull-request
 [color]
 	diff = true
 	ui = false
