@@ -20,7 +20,7 @@
 	rrmc = rm -r --cached
 	cp = cherry-pick
 	autosquash = rebase --interactive --autosquash
-	yolo = push --force
+	yolo = push --force-with-lease
 	lsd = ls-files -d
 	lsm = ls-files -m
 	latest-tag = describe --tags --abbrev=0
