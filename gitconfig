@@ -61,8 +61,6 @@
 	protocol = https
 [init]
 	templatedir = ~/.config/git/templates
-[commit]
-	template = ~/.gitmessage
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
