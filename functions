@@ -10,7 +10,7 @@ function go()
   fi
 
   echo >&2 "(in $base)"
-  findopts=(-type d -maxdepth 4)
+  findopts=(-type d -maxdepth 4 -mindepth 2)
   excludes='.cocoapods|.vim/bundle'
 
   dir=$(
