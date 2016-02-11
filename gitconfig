@@ -1,3 +1,4 @@
+; vim: ft=gitconfig
 [core]
 	editor = vim +1 -c normal\\ $
 	trustctime = false
