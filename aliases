@@ -1,6 +1,5 @@
 # vim
 alias vimgit="vim git-status -c Gstatus -c only -c bd1"
-alias git=hub
 
 # xcode
 alias stupidxcode='rm -rf ~/Library/Developer/Xcode/DerivedData/* && sudo find /var/folders -name "*[Xx]code*" -o -name "*llvm*" | xargs sudo rm -rf'
@@ -35,11 +34,10 @@ alias marked="open -a Marked"
 alias preview="open -a Preview"
 
 # git
-alias s="git status"
-alias c="git commit --verbose"
-alias co="git checkout"
-alias d="git diff"
-alias dc="git diff --cached"
-alias ap="git add --patch"
+alias git=hub
+alias g=git
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gap="git add --patch"
 alias gp="git push"
 alias gpub="git publish"
