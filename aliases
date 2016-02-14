@@ -38,6 +38,8 @@ alias preview="open -a Preview"
 # git
 alias git=hub
 alias g=git
+alias gs="git status"
+alias gc="git commit --verbose"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
