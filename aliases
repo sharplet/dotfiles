@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # vim
 alias vimgit="vim git-status -c Gstatus -c only -c bd1"
 

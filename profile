@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 [ -f "$HOME/.profile.private" ] && source $HOME/.profile.private
 
 [ -f "$HOME/.aliases" ] && source $HOME/.aliases

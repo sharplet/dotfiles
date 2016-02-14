@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # vi command line editing
 set -o vi
 

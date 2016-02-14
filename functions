@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # present a project selector and change to the selected directory
 function go()
