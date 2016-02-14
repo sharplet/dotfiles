@@ -120,6 +120,9 @@ if !has("gui_running")
   colorscheme twilight256
 endif
 
+" Use posix syntax highlighting for shell scripts unless otherwise specified
+let g:is_posix = 1
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
