@@ -1,0 +1,94 @@
+#!/bin/sh
+#
+# Recursively find and replace.
+
+set -eo pipefail
+
+if [ -f .fsub.env ]; then
+  include_pattern="$(env $(cat .fsub.env | xargs) sh -c 'echo $INCLUDE')"
+else
+  include_pattern="$INCLUDE"
+fi
+
+search_directories=("<default>")
+
+while getopts "d:i:h" opt; do
+  case ${opt} in
+    d)
+      if [ "${search_directories[@]}" = "<default>" ]; then
+        search_directories=("${OPTARG}")
+      else
+        search_directories+=("${OPTARG}")
+      fi
+      ;;
+    i)
+      include_pattern="${OPTARG}"
+      ;;
+    h)
+      usage_mode="true"
+      ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+if [ "${usage_mode}" == "true" ]; then
+  echo
+  echo 'Usage: fsub [options] <pattern> <replacement>'
+  echo
+  echo 'Recursively searches for files, replacing strings matching `pattern`'
+  echo 'with `replacement`.'
+  echo
+  echo 'Patterns:'
+  echo '  Patterns are a Ruby-compatible regular expressions.'
+  echo
+  echo '  The string will automatically be wrapped in "/" delimeters, e.g.:'
+  echo
+  echo '      fsub foo bar        # internally creates regex /foo/'
+  echo
+  echo '  To specify custom options, include the delimiters yourself and append'
+  echo '  the option flags, e.g.:'
+  echo
+  echo '      fsub /foo/i bar     # case insensitive match'
+  echo
+  echo 'Replacement Strings:'
+  echo '  Capture variables are supported. Take care to appropriately escape backslash'
+  echo '  characters in the shell, e.g.:'
+  echo
+  echo '      fsub f(oo) b\\\\1     # replaces "foo" with "boo"'
+  echo '      fsub f(oo) '"'"'b\\1'"'"'    # replaces "foo" with "boo"'
+  echo
+  echo 'Options:'
+  echo '  -d    Set the search directory. Defaults to the current directory.'
+  echo '        Can be specified multiple times.'
+  echo '  -i    A file glob pattern that further filters the files to search in.'
+  echo
+  echo 'Environment Variables:'
+  echo '  If the INCLUDE variable is set, it will be used to set the include'
+  echo '  pattern, unless it is overridden on the command line.'
+
+  exit
+fi
+
+if [ $# == 0 ]; then
+  >&2 echo "fsub: specify a pattern to match"
+  exit 1
+elif [ $# == 1 ]; then
+  >&2 echo "fsub: specify a replacement string"
+  exit 1
+fi
+
+search_pattern=$(echo "$1" | /usr/bin/env ruby -p -e 'gsub %r{^(?!/)(.+)$}, "/\\1/"')
+replacement_string="$2"
+
+if [ "${search_directories[*]}" = "<default>" ]; then
+  search_directories=(".")
+fi
+
+find_args=("${search_directories[@]}")
+
+if [ -n "${include_pattern}" ]; then
+  find_args+=("-name" "${include_pattern}")
+fi
+
+find "${find_args[@]}" -print0 | xargs -0 /usr/bin/env ruby -p -i -e "gsub ${search_pattern}, \"${replacement_string}\""
