@@ -4,3 +4,6 @@
 [submodule "selecta"]
 	path = selecta
 	url = https://github.com/garybernhardt/selecta.git
+[submodule "diff-so-fancy"]
+	path = diff-so-fancy
+	url = https://github.com/sharplet/diff-so-fancy.git
