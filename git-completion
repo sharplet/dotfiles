@@ -1,5 +1,5 @@
 #!/bin/sh
 
 function _git_close() {
-  _git_branch "$@"
+  __gitcomp_nl "$(__git_heads)"
 }
