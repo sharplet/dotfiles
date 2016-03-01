@@ -32,11 +32,11 @@ Plugin 'b4winckler/vim-objc'
 Plugin 'cespare/vim-toml'
 Plugin 'cfdrake/vim-carthage'
 Plugin 'cohama/lexima.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sharplet/vim-dispatch'
 Plugin 'sharplet/vim-snippets'
+Plugin 'thoughtbot/pick.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -265,6 +265,15 @@ set wildmode=longest,full
 let g:dispatch_format='%f:%l: %m,%+I%.%#'
 
 command! -nargs=* -range=0 Todo Dispatch todogrep <q-args>
+
+
+"" pick.vim
+
+nnoremap <C-P><CR>  :call PickFile()<CR>
+nnoremap <C-P><C-T> :call PickFileTab()<CR>
+nnoremap <C-P><C-X> :call PickFileSplit()<CR>
+nnoremap <C-P><C-V> :call PickFileVerticalSplit()<CR>
+nnoremap <C-P><C-B> :call PickBuffer()<CR>
 
 
 "" RSpec.vim mappings
