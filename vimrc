@@ -24,23 +24,24 @@ set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'Keithbsmiley/swift.vim'
-Plugin 'sharplet/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'xolox/vim-misc'
+Plugin 'SirVer/ultisnips'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'b4winckler/vim-objc'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'cfdrake/vim-carthage'
-Plugin 'SirVer/ultisnips'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'sharplet/vim-dispatch'
 Plugin 'sharplet/vim-snippets'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'xolox/vim-misc'
 
 call vundle#end()
 
