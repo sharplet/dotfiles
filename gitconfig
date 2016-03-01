@@ -36,7 +36,7 @@
 	dd = !git difftool -y --extcmd 'icdiff --highlight --line-numbers'
 	intend = add --intent-to-add
 	sha = log -1 --pretty=format:%H
-	go = !git branch | sed -En 's/^  (.+)$/\\1/p' | selecta | xargs -t git checkout
+	go = !git branch | sed -En 's/^  (.+)$/\\1/p' | pick | xargs -t git checkout
 	g = log --oneline --graph --decorate
 	ga = log --all --oneline --graph --decorate
 	gf = g --ignore-missing ^origin/master ^origin/develop ^origin/development HEAD

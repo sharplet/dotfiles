@@ -1,1 +1,1 @@
-EXCLUDES="README.md LICENSE Brewfile install.rb brew-bundle vim-update-bundle selecta"
+EXCLUDES="README.md LICENSE Brewfile install.rb brew-bundle vim-update-bundle"

@@ -9,7 +9,6 @@ function go()
     return 1
   fi
 
-  echo >&2 "(in $base)"
   findopts=(-type d -maxdepth 4 -mindepth 2)
   excludes='.cocoapods|.vim/bundle'
 
@@ -20,7 +19,7 @@ function go()
       | xargs -I{} stat -f '%m %N' '{}' | sort -nr \
       | sed -E 's,^[0-9]+ ,,' \
       | sed -E "s,^$base/(src/)?,," \
-      | selecta
+      | pick
   )
 
   # after selecting a project, expand it back out to its full path and jump to it
