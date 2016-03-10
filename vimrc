@@ -83,6 +83,7 @@ set smartcase           " override ignorecase when pattern contains upper case c
 set expandtab           " use spaces instead of tabs by default
 set sts=2 ts=2 sw=2     " default indentation
 set colorcolumn=80      " 80-column page guide
+set cursorline          " highlight the current line
 
 " invisibles
 set list

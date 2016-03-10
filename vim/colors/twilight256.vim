@@ -285,6 +285,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Todo", "ff4500", "eeee00", "")
 
     call <SID>X("ColorColumn", "", "424242", "")
+    call <SID>X("CursorLine", "", "282828", "NONE")
 
     " invisible characters
     call <SID>X("NonText", "424242", "", "")
