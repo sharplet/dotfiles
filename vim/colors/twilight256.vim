@@ -288,7 +288,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("CursorLine", "", "282828", "NONE")
 
     " invisible characters
-    call <SID>X("NonText", "424242", "", "")
+    call <SID>X("NonText", "555555", "", "")
     call <SID>X("SpecialKey", "424242", "", "")
 
     " delete functions {{{
