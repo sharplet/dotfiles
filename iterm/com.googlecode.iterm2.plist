@@ -141,14 +141,16 @@
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>368 342 217 309 0 0 1680 1050 </string>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>929 110 445 103 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>398 406 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2050 326 700 622 1440 0 1920 1057 </string>
+	<string>372 191 700 622 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>49 27 1389 843 0 0 1440 877 </string>
+	<string>4 290 920 587 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>760 405 920 622 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -303,12 +305,16 @@
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83040332794189453</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83038914203643799</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.8304140567779541</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -996,6 +1002,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -1035,6 +1043,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/adsharp/src/sharplet/dotfiles/iterm</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -1054,7 +1064,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-10T06:57:13Z</date>
+	<date>2016-02-16T08:04:04Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1106,7 +1116,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160207-nightly</string>
+	<string>2.9.20160209-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
