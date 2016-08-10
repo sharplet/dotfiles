@@ -1,8 +1,5 @@
 # vim: ft=sh
 
-# vi command line editing
-set -o vi
-
 # functions
 [ -f "$HOME/.functions" ] && source $HOME/.functions
 
