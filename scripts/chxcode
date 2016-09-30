@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+list_xcodes() {
+  ls -d /Applications/Xcode*.app
+}
+
+list_xcodes | nl -b a -n rn -s ".	"
+
+declare -i selection
+
+echo -n "Choose Xcode: "
+read -r selection
+
+if [[ $selection == 0 ]]; then
+  echo >&2 "Invalid selection"
+  exit 1
+fi
+
+xcode_path="$(list_xcodes | sed "${selection}q;d")"
+
+echo "Switching to ${xcode_path}..."
+sudo xcode-select --switch "${xcode_path}"
