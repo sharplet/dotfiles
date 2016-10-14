@@ -16,6 +16,6 @@ if [ -z "$branch" ]; then
   exit 1
 fi
 
-git merge --ff-only "$branch" && git push origin master ":$branch"
-
-echo "It is now safe to delete branch '$branch'."
+git merge --ff-only "$branch" \
+  && git push --atomic origin master ":$branch" \
+  && git branch -d "$branch"
