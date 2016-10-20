@@ -1,0 +1,19 @@
+#!/bin/sh
+
+rebase_dir="$(git rev-parse --show-toplevel)/.git/rebase-apply"
+
+if [ ! -d "${rebase_dir}" ]; then
+  echo >&2 "error: not rebasing?"
+  exit 1
+fi
+
+read -r next_patch < "${rebase_dir}/next"
+
+next_patch_path="${rebase_dir}/$(printf %04d "$next_patch")"
+
+if [ ! -f "${next_patch_path}" ]; then
+  echo >&2 "fatal: can't find patch ${next_patch} at path '${next_patch_path}'"
+  exit 1
+fi
+
+head -1 < "${next_patch_path}" | cut -d" " -f2
