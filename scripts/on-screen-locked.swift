@@ -1,5 +1,3 @@
-#!/usr/bin/env swift
-
 import Foundation
 
 func fail(_ message: String, status: Int32 = EXIT_FAILURE) -> Never {
@@ -16,10 +14,20 @@ guard case let arguments = Array(CommandLine.arguments.dropFirst()),
   case let command = arguments.joined(separator: " ")
   else { fail("error: no command specified") }
 
+let dateFormatter = ISO8601DateFormatter()
+dateFormatter.formatOptions = [
+  .withFullDate,
+  .withTime,
+  .withSpaceBetweenDateAndTime,
+  .withColonSeparatorInTime,
+]
+dateFormatter.timeZone = .autoupdatingCurrent
+
 let notificationCenter = DistributedNotificationCenter.default()
 
 notificationCenter.addObserver(forName: .ScreenIsLocked, object: nil, queue: .main) { notification in
-  print("\(notification.name.rawValue): \(command)")
+  let date = Date()
+  print("[\(dateFormatter.string(from: date))] \(notification.name.rawValue): \(command)")
 
   let process = Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", command])
   process.waitUntilExit()
