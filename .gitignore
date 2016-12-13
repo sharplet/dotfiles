@@ -1,2 +1,3 @@
+scripts/on-screen-locked
 vim/bundle/*
 !vim/bundle/Vundle.vim

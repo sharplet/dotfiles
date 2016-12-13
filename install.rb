@@ -21,7 +21,9 @@ system "rcup #{rcup_opts}"
 
 # scripts
 
+scripts_dir = File.expand_path("../scripts", __FILE__).chomp
 system "ln -sf $HOME/bin $HOME/.scripts"
+system "cd #{scripts_dir} && ./build.sh"
 
 # vim backup & undo
 
