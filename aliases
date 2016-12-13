@@ -9,6 +9,9 @@ alias xcode-beta='sudo xcode-select --switch /Applications/Xcode-beta.app'
 alias xcode-default='sudo xcode-select --switch /Applications/Xcode.app'
 alias xcb="open -a Xcode-beta"
 
+# gpg
+alias gpg=gpg2
+
 # appcode
 alias ac="open -a AppCode"
 

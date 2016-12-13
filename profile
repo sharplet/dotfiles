@@ -12,6 +12,9 @@ fi
 export EDITOR=vim
 export PROJ_ROOT=$HOME
 
+# gpg
+export GPG_TTY=$(tty)
+
 eval "$(rbenv init -)"
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi

@@ -47,6 +47,7 @@
 	ff = merge --ff-only
 	remaster = pull -r origin master
 	ap = add --patch
+	showsig = show --show-signature
 [color]
 	diff = true
 	ui = false
@@ -64,7 +65,8 @@
 	newHighlight = green 22
 [user]
 	name = Adam Sharp
-	email = adsharp@me.com
+	email = adam@sharplet.me
+	signingkey = 827C4A50CA6BF0C3
 [rerere]
 	enabled = true
 [push]
@@ -85,3 +87,7 @@
 	helper = osxkeychain
 [gitsh]
 	gitCommand = /usr/bin/env hub
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
