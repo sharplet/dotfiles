@@ -14,6 +14,12 @@ guard case let arguments = Array(CommandLine.arguments.dropFirst()),
   case let command = arguments.joined(separator: " ")
   else { fail("error: no command specified") }
 
+print("Starting...")
+
+DispatchQueue.main.async {
+  print("Registered '\(command)' to run on \(Notification.Name.ScreenIsLocked.rawValue)")
+}
+
 let dateFormatter = ISO8601DateFormatter()
 dateFormatter.formatOptions = [
   .withFullDate,
@@ -37,8 +43,5 @@ notificationCenter.addObserver(forName: .ScreenIsLocked, object: nil, queue: .ma
     return
   }
 }
-
-print("Registered '\(command)' to run on \(Notification.Name.ScreenIsLocked.rawValue)")
-print("Starting...")
 
 dispatchMain()
