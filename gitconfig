@@ -61,9 +61,9 @@
 	whitespace = red reverse
 [color "diff-highlight"]
 	oldNormal = red
-	oldHighlight = red 52
+	oldHighlight = "red #ffdddd"
 	newNormal = green
-	newHighlight = green 22
+	newHighlight = "green #ddeedd"
 [user]
 	name = Adam Sharp
 	email = adam@sharplet.me
