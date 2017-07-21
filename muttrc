@@ -44,6 +44,13 @@ set uncollapse_jump
 set sort_re
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
+# Collapse threads by default
+folder-hook . "exec collapse-all"
+
+# Color collapsed threads
+color index cyan default "~v~(!~N)" # collapsed thread with no New
+color index cyan default "~v~(~N)" # collapsed thread with New
+
 # Index Key Bindings
 bind index gg first-entry
 bind index G last-entry
