@@ -1,0 +1,22 @@
+[general]
+ui = ttyui
+accounts = sharplet.me
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account sharplet.me]
+localrepository = sharplet.me-local
+remoterepository = sharplet.me-remote
+postsynchook = notmuch new
+
+[Repository sharplet.me-local]
+type = Maildir
+localfolders = ~/.mail/adam-sharplet.me
+
+[Repository sharplet.me-remote]
+type = IMAP
+sslcacertfile = /etc/ssl/cert.pem
+remoteuser = adam@sharplet.me
+remotehost = imap.fastmail.com
+remotepasseval = get_keychain_pass(account="adam@sharplet.me", server="imap.fastmail.com")
+folderfilter = lambda folder: not re.search('^(migrated|[Airmail]|Spam$)', folder)
