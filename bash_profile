@@ -1,9 +1,7 @@
 # vim: ft=sh
 
-# functions
-[ -f "$HOME/.functions" ] && source $HOME/.functions
-
-[ -f "$HOME/.profile" ] && source $HOME/.profile
+[ -f "$HOME/.functions" ] && source "$HOME/.functions"
+[ -f "$HOME/.profile" ] && source "$HOME/.profile"
 
 # completion
 if [ -d "/Library/Developer/CommandLineTools" ]; then
