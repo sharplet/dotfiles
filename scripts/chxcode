@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+plistbuddy=/usr/libexec/PlistBuddy
+
 list_xcodes() {
-  ls -d /Applications/Xcode*.app
+  find /Applications/Xcode*.app -name Info.plist -maxdepth 2 \
+    -exec echo -n "{} " \; \
+    -exec $plistbuddy -c 'Print :CFBundleVersion' {} \; \
+    | sort -n -k 2 \
+    | cut -d " " -f 1 \
+    | grep -E -o '^.+\.app'
 }
 
 list_xcodes | nl -b a -n rn -s ".	"
