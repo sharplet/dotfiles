@@ -15,8 +15,3 @@ prompt_command()
   PS1="$(exit_status_colors ▸)\h \W$(__git_ps1)$ "
 }
 export PROMPT_COMMAND=prompt_command
-
-# rbenv
-if which rbenv >/dev/null; then
-  eval "$(rbenv init -)"
-fi

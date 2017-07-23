@@ -15,14 +15,12 @@ export PROJ_ROOT=$HOME
 # gpg
 export GPG_TTY=$(tty)
 
-eval "$(rbenv init -)"
-
-if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+if which -s rbenv; then eval "$(rbenv init -)"; fi
+if which -s swiftenv; then eval "$(swiftenv init -)"; fi
 
 # PATH
 export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH=".git/safe/../../bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/bin:$PATH"
