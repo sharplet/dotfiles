@@ -56,3 +56,19 @@ function scratch()
   git init "${scratch_dir}"
   cd "${scratch_dir}"
 }
+
+exit_status_colors()
+{
+  # shellcheck disable=SC2181
+  exit_status=$?
+
+  cyan=\\e\[36\;1m
+  red=\\e\[31\;1m
+  reset=\\e\[0m
+
+  if [ $exit_status != 0 ]; then
+    echo "$red$*$reset"
+  else
+    echo "$cyan$*$reset"
+  fi
+}

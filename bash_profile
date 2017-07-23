@@ -11,12 +11,13 @@ if [ -d "/Library/Developer/CommandLineTools" ]; then
 fi
 
 # prompt
-export PS1='\h \W$(__git_ps1)$ '
+prompt_command()
+{
+  PS1="$(exit_status_colors ▸)\h \W$(__git_ps1)$ "
+}
+export PROMPT_COMMAND=prompt_command
 
 # rbenv
 if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
-
-# iTerm2
-source $HOME/.iterm/shell_integration.bash

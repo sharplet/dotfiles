@@ -16,9 +16,7 @@ compinit
 [ -f "$HOME/.functions" ] && source "$HOME/.functions"
 
 setopt promptsubst
-PROMPT='%m %2~$(__git_ps1)%% '
-
-source "$HOME/.iterm/shell_integration.zsh"
+PROMPT='$(exit_status_colors ▸)%m %2~$(__git_ps1)%% '
 
 # batch file renaming
 autoload -U zmv
