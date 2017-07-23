@@ -20,3 +20,6 @@ PROMPT='$(exit_status_colors ▸)%m %2~$(__git_ps1)%% '
 
 # batch file renaming
 autoload -U zmv
+
+# enable reverse history search in vi mode
+bindkey "^R" history-incremental-search-backward
