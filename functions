@@ -32,31 +32,6 @@ function go()
   fi
 }
 
-# print the last touched file in this directory
-function lf()
-{
-  ls -t $@ | grep -v '^total' | head -1
-}
-
-# edit the last touched file with EDITOR
-function elf()
-{
-  [ "x$EDITOR" != "x" ] && $EDITOR "$(lf)"
-}
-
-# start a new scratch project
-function scratch()
-{
-  if [ $# = 0 ]; then
-    echo "fatal: no project name provided" >&2
-    return 1
-  fi
-
-  scratch_dir="${HOME}/src/scratch/$1"
-  git init "${scratch_dir}"
-  cd "${scratch_dir}"
-}
-
 exit_status_colors()
 {
   # shellcheck disable=SC2181
