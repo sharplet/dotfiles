@@ -1,5 +1,10 @@
 #!/bin/sh
 
+_find_with_go_defaults() {
+  base="$1"; shift
+  find -H "$base" -type d -maxdepth 4 -mindepth 2 "$@"
+}
+
 # present a project selector and change to the selected directory
 go() {
   base=${1:-$PROJ_ROOT}
@@ -8,11 +13,10 @@ go() {
     return 1
   fi
 
-  findopts=(-type d -maxdepth 4 -mindepth 2)
   excludes='.cocoapods|.vim/bundle'
 
   dir=$(
-    find -H $base ${findopts[*]} -path '*/.git' 2>/dev/null \
+    _find_with_go_defaults "$base" -path '*/.git' 2>/dev/null \
       | sed 's,/.git$,,' \
       | grep -vE "$excludes" \
       | xargs -I{} stat -f '%m %N' '{}' | sort -nr \
