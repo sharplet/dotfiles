@@ -15,8 +15,7 @@ list_xcodes | nl -b a -n rn -s ".	"
 
 declare -i selection
 
-echo -n "Choose Xcode: "
-read -r selection
+read -p "Choose Xcode: " -r selection
 
 if [[ $selection == 0 ]]; then
   echo >&2 "Invalid selection"
