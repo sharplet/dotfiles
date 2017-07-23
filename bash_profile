@@ -1,3 +1,4 @@
+# shellcheck disable=SC1090,SC1091
 # vim: ft=sh
 
 [ -f "$HOME/.functions" ] && source "$HOME/.functions"
