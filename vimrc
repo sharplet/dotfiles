@@ -121,9 +121,9 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if !has("gui_running")
-  set bg=light
-  colorscheme pencil
-"   colorscheme twilight256
+"   set bg=light
+"   colorscheme pencil
+  colorscheme twilight256
 endif
 
 " Use posix syntax highlighting for shell scripts unless otherwise specified
