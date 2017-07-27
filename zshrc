@@ -13,7 +13,6 @@ compinit
 # End of lines added by compinstall
 
 [ -f "$HOME/.profile" ] && source "$HOME/.profile"
-[ -f "$HOME/.functions" ] && source "$HOME/.functions"
 
 setopt promptsubst
 PROMPT='$(exit_status_colors ▸)%m %2~$(__git_ps1)%% '

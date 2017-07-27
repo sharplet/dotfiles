@@ -1,7 +1,7 @@
 # shellcheck disable=SC1090,SC1091
 # vim: ft=sh
 
-[ -f "$HOME/.functions" ] && source "$HOME/.functions"
+# shared configuration
 [ -f "$HOME/.profile" ] && source "$HOME/.profile"
 
 # completion

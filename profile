@@ -4,6 +4,7 @@
 [ -f "$HOME/.profile.private" ] && source "$HOME/.profile.private"
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -f "$HOME/.functions" ] && source "$HOME/.functions"
 [ -f "$HOME/.git-completion" ] && source "$HOME/.git-completion"
 
 if [ -d "/Library/Developer/CommandLineTools" ]; then
