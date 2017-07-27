@@ -35,6 +35,10 @@ go() {
   fi
 }
 
+command_exists() {
+  command -v "$@" >/dev/null
+}
+
 exit_status_colors() {
   # shellcheck disable=SC2181
   exit_status=$?

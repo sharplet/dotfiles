@@ -17,8 +17,8 @@ export PROJ_ROOT=$HOME
 # gpg
 export GPG_TTY=$(tty)
 
-if which -s rbenv; then eval "$(rbenv init -)"; fi
-if which -s swiftenv; then eval "$(swiftenv init -)"; fi
+if command_exists rbenv; then eval "$(rbenv init -)"; fi
+if command_exists swiftenv; then eval "$(swiftenv init -)"; fi
 
 # PATH
 export PATH="$PATH:/usr/local/heroku/bin"
