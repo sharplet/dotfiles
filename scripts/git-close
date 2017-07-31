@@ -3,16 +3,31 @@
 set -eo pipefail
 
 current_branch=$(git branch | sed -E -n 's/^\* (.+)$/\1/p')
+force=false
 
-if [ "$current_branch" != "master" ]; then
-  echo "You must be on master to close a pull request." >&2
+while getopts f opt; do
+  case $opt in
+    f)
+      force=true
+      ;;
+    *)
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+if [ $# -lt 1 ]; then
+  echo "specify a branch to close" >&2
   exit 1
 fi
 
 branch="$1"
 
-if [ -z "$branch" ]; then
-  echo "specify a branch to close" >&2
+if [ "$force" != true ] && [ "$current_branch" != "master" ]; then
+  echo "You must be on master to close a pull request." >&2
+  echo "Either check out 'master' or specify '-f' to continue." >&2
   exit 1
 fi
 
