@@ -32,5 +32,6 @@ if [ "$force" != true ] && [ "$current_branch" != "master" ]; then
 fi
 
 git merge --ff-only "$branch" \
-  && git push --atomic origin master ":$branch" \
+  && git push origin "$current_branch" \
+  && git push origin ":$branch" \
   && git branch -d "$branch"
