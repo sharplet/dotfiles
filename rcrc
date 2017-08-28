@@ -1,1 +1,1 @@
-EXCLUDES="README.md LICENSE Brewfile install.rb brew-bundle vim-update-bundle"
+EXCLUDES="README.md LICENSE Brewfile install.rb brew-bundle vim-update-bundle src Package.swift .build build.sh"
