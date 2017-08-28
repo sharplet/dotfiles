@@ -13,25 +13,18 @@ go() {
     return 1
   fi
 
-  excludes='.cocoapods|.vim/bundle'
-
   dir=$(
-    _find_with_go_defaults "$base" -path '*/.git' 2>/dev/null \
-      | sed 's,/.git$,,' \
-      | grep -vE "$excludes" \
-      | xargs -I{} stat -f '%m %N' '{}' | sort -nr \
-      | sed -E 's,^[0-9]+ ,,' \
-      | sed -E "s,^$base/(src/)?,," \
-      | pick
+    cd "$base" &&
+    _find_with_go_defaults . -name .git -type d -prune \
+      | catdirname -0 \
+      | xargs -0 ls -dt \
+      | fzf --reverse -d/ --with-nth=3..
   )
 
   # after selecting a project, expand it back out to its full path and jump to it
   if [ -n "$dir" ]; then
-    dest=$base/$dir
-    if [ ! -d "$dest" ]; then
-      dest=$base/src/$dir
-    fi
-    touch "$dest" && cd "$dest"
+    dest="$base/$dir"
+    touch "$dest" && cd "$dest" || return
   fi
 }
 
