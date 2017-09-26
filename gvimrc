@@ -1,5 +1,5 @@
 " Configure font
-set guifont=Inconsolata-dz:h11
+set guifont=Inconsolata-dz:h13
 
 " Use twilight colorscheme
 set background=dark
