@@ -18,39 +18,37 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Set up Vundle
 filetype off
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+" Set up vim-plug
+call plug#begin('~/.vim/plugged')
 
-Plugin 'Keithbsmiley/swift.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'b4winckler/vim-objc'
-Plugin 'cespare/vim-toml'
-Plugin 'cfdrake/vim-carthage'
-Plugin 'cohama/lexima.vim'
-Plugin 'gfontenot/vim-xcode'
-Plugin 'janko-m/vim-test'
-Plugin 'jerrymarino/SwiftPlayground.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'thoughtbot/pick.vim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'w0rp/ale'
-Plugin 'xolox/vim-misc'
+Plug 'Keithbsmiley/swift.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'b4winckler/vim-objc'
+Plug 'cespare/vim-toml'
+Plug 'cfdrake/vim-carthage'
+Plug 'cohama/lexima.vim'
+Plug 'gfontenot/vim-xcode'
+Plug 'janko-m/vim-test'
+Plug 'jerrymarino/SwiftPlayground.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-ruby/vim-ruby'
+Plug 'w0rp/ale'
+Plug 'xolox/vim-misc'
 
-call vundle#end()
+call plug#end()
 
 " Enable project-specific .vimrc files
 set exrc
@@ -284,16 +282,6 @@ let g:dispatch_format='%f:%l: %m,%+I%.%#'
 command! -nargs=* -range=0 Todo Dispatch todogrep <q-args>
 
 
-"" pick.vim
-
-nnoremap <C-P><CR>  :call PickFile()<CR>
-nnoremap <C-P><C-T> :call PickFileTab()<CR>
-nnoremap <C-P><C-X> :call PickFileSplit()<CR>
-nnoremap <C-P><C-V> :call PickFileVerticalSplit()<CR>
-nnoremap <C-P><C-B> :call PickBuffer()<CR>
-nnoremap <C-P><C-]> :call PickTag()<CR>
-
-
 "" vim-xcode
 
 let g:xcode_runner_command = 'Dispatch {cmd}'
@@ -322,24 +310,6 @@ endfunction
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-
-"" The Silver Searcher
-
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " bind \ (backward slash) to grep shortcut
-  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-  nnoremap \ :Ag<SPACE>
-endif
 
 
 "" NERDCommenter
