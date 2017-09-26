@@ -255,6 +255,11 @@ vmap <C-Up> [e`[V`]
 vmap <C-Down> ]e`[V`]
 
 
+"" fzf
+
+set rtp+=/usr/local/opt/fzf
+
+
 "" Completion
 
 set wildmenu
