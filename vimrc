@@ -305,15 +305,6 @@ map <Leader>b :Xbuild<CR>
 map <Leader>r :Xrun<CR>
 
 
-"" RSpec.vim mappings
-
-let g:rspec_command = "Dispatch rspec {spec}"
-
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 "" Qargs (http://vimcasts.org/episodes/project-wide-find-and-replace/)
 
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
