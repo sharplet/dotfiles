@@ -294,6 +294,17 @@ nnoremap <C-P><C-B> :call PickBuffer()<CR>
 nnoremap <C-P><C-]> :call PickTag()<CR>
 
 
+"" vim-xcode
+
+let g:xcode_runner_command = 'Dispatch {cmd}'
+let g:xcode_xcpretty_flags = '--no-color'
+let g:xcode_xcpretty_testing_flags = '--test'
+
+map <Leader>t :Xtest<CR>
+map <Leader>b :Xbuild<CR>
+map <Leader>r :Xrun<CR>
+
+
 "" RSpec.vim mappings
 
 let g:rspec_command = "Dispatch rspec {spec}"
