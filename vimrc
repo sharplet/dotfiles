@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'b4winckler/vim-objc'
 Plug 'cespare/vim-toml'
 Plug 'cfdrake/vim-carthage'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'cohama/lexima.vim'
 Plug 'gfontenot/vim-xcode'
 Plug 'janko-m/vim-test'
@@ -273,6 +274,11 @@ let g:ale_fixers = {
       \ }
 
 let g:ale_fix_on_save = 1
+
+
+" vim-test
+
+let test#strategy = 'vtr'
 
 
 "" vim-dispatch
