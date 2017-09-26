@@ -291,6 +291,7 @@ nnoremap <C-P><C-T> :call PickFileTab()<CR>
 nnoremap <C-P><C-X> :call PickFileSplit()<CR>
 nnoremap <C-P><C-V> :call PickFileVerticalSplit()<CR>
 nnoremap <C-P><C-B> :call PickBuffer()<CR>
+nnoremap <C-P><C-]> :call PickTag()<CR>
 
 
 "" RSpec.vim mappings
