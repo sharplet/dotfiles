@@ -26,7 +26,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Keithbsmiley/swift.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'b4winckler/vim-objc'
 Plugin 'cespare/vim-toml'
