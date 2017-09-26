@@ -349,6 +349,11 @@ let g:NERDCustomDelimiters = {
 \ }
 
 
+"" JSX
+
+let g:jsx_ext_required = 0
+
+
 "" Miscellaneous
 
 " Convenient command to see the difference between the current buffer and the
