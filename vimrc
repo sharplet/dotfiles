@@ -201,13 +201,6 @@ let g:netrw_liststyle=3         " use netrw's tree view by default
 map <leader>v :20Vexplore<CR>   " open a narrow split for file browsing
 
 
-"" Snippets
-
-let g:UltiSnipsExpandTrigger="<C-J>"
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-
-
 "" Mappings
 
 let mapleader=","
@@ -269,17 +262,15 @@ set wildmenu
 set wildmode=longest,full
 
 
-"" syntastic
+" ALE
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:ale_fixers = {
+      \   'javascript': [
+      \     'prettier',
+      \   ],
+      \ }
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+let g:ale_fix_on_save = 1
 
 
 "" vim-dispatch
