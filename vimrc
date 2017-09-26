@@ -149,7 +149,7 @@ if has("autocmd")
 
   " Set up text width and format options
   autocmd FileType text,markdown        setlocal textwidth=0
-  autocmd FileType text,markdown        setlocal autoindent wrap
+  autocmd FileType text,markdown        setlocal autoindent wrap linebreak
   autocmd FileType text,markdown        setlocal sts=4 ts=4 sw=4 expandtab
   autocmd FileType c,cpp,objc,objcpp    setlocal textwidth=78
   autocmd FileType c,cpp,objc,objcpp    setlocal formatoptions+=ro
@@ -157,7 +157,7 @@ if has("autocmd")
 
   " Set up some file types
   autocmd BufRead,BufNewFile *.m set filetype=objc
-  autocmd BufRead,BufNewFile PULLREQ_EDITMSG set filetype=gitcommit
+  autocmd BufRead,BufNewFile PULLREQ_EDITMSG set filetype=gitcommit textwidth=0 wrap linebreak
   autocmd BufRead,BufNewFile Podfile,*.podspec,Gemfile,Vagrantfile set filetype=ruby
 
   " Swift files
