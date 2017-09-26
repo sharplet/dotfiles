@@ -188,7 +188,6 @@ else
 
 endif " has("autocmd")
 
-set relativenumber              " relative line numbers
 set number                      " current line shows actual number, instead of 0
 
 set splitbelow                  " horizontal splits open below the current window
