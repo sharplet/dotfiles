@@ -4,7 +4,7 @@ set -e
 
 list_swift_executables() {
   swift package describe --type json \
-    | jq --raw-output '.modules | map(select(type == "executable")) | .[].name'
+    | jq --raw-output '.targets | map(select(.type == "executable")) | .[].name'
 }
 
 swift build -c release
