@@ -9,6 +9,19 @@ if [ -d "/Library/Developer/CommandLineTools" ]; then
   source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi
 
+help() {
+	bash -s -- "$@" <<-HELP
+		output="\$(help -m "\$@")"
+
+		if [ \$? != 0 ]; then
+		  printf >&2 "\$output"
+		  exit 1
+		fi
+
+		printf "\$output" | "\${PAGER:-less}"
+	HELP
+}
+
 # prompt
 prompt_command()
 {

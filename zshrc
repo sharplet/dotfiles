@@ -22,3 +22,10 @@ autoload -U zmv
 
 # enable reverse history search in vi mode
 bindkey "^R" history-incremental-search-backward
+
+unalias run-help 2>/dev/null
+autoload -Uz run-help
+
+help() {
+  PAGER=less run-help "$@"
+}
