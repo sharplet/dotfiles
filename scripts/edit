@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# disable globbing when expending VISUAL or EDITOR, we only want word splitting
+set -f
+
+# shellcheck disable=SC2086
+exec ${VISUAL:-${EDITOR:-vi}} "$@"
