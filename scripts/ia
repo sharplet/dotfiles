@@ -1,0 +1,16 @@
+#!/bin/sh
+
+while getopts w opt; do
+  case $opt in
+    w)
+      wait_until_exit=-FWn
+      ;;
+    *)
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+exec open $wait_until_exit -a "iA Writer" "$@"
