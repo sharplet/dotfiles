@@ -3,20 +3,23 @@
 set -eo pipefail
 
 current_branch=$(git branch | sed -E -n 's/^\* (.+)$/\1/p')
-force=false
+merge_option="--ff-only"
 
-while getopts f opt; do
+for opt; do
   case $opt in
-    f)
+    -f|--force)
       force=true
       ;;
+    --no-ff)
+      merge_option="--no-ff"
+      ;;
     *)
-      exit 1
+      break
       ;;
   esac
-done
 
-shift $((OPTIND - 1))
+  shift
+done
 
 if [ $# -lt 1 ]; then
   echo "specify a branch to close" >&2
@@ -31,7 +34,7 @@ if [ "$force" != true ] && [ "$current_branch" != "master" ]; then
   exit 1
 fi
 
-git merge --ff-only "$branch" \
+git merge "$merge_option" "$branch" \
   && git push origin "$current_branch" \
   && git push origin ":$branch" \
   && git branch -d "$branch"
