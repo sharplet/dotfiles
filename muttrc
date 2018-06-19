@@ -44,6 +44,16 @@ set uncollapse_jump
 set sort_re
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
+# Pager View Options
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop # don't go to next message automatically
+set menu_scroll
+set tilde
+unset markers
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
 # Collapse threads by default
 folder-hook . "exec collapse-all"
 
@@ -62,6 +72,20 @@ bind index <space> collapse-thread
 bind index,pager <down> sidebar-next
 bind index,pager <up> sidebar-prev
 bind index,pager <right> sidebar-open
+
+# Pager key bindings
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+
+bind pager R  group-reply
+
+# View attachments properly.
+bind attach <return> view-mailcap
+
+# Open message in Mail.app
+macro pager p ":set pipe_decode=no<enter><pipe-message>open-in-mail<enter>:set pipe_decode=yes<enter>" "open message in Mail.app"
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
@@ -86,7 +110,8 @@ mailboxes \
   +adam-sharplet.me/Drafts \
   +adam-sharplet.me/Sent \
   +adam-sharplet.me/ReactiveCocoa \
-  +adam-sharplet.me/Swift\ Evolution
+  +adam-sharplet.me/Swift\ Evolution \
+  +adam-sharplet.me/Learn\ Spam
 
 # Other special folders
 set mbox = "+adam-sharplet.me/Archive"

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+sed -n 's/^[Mm][Ee][Ss][Ss][Aa][Gg][Ee]-[Ii][Dd]: /message:/p' | xargs open

@@ -19,4 +19,4 @@ sslcacertfile = /etc/ssl/cert.pem
 remoteuser = adam@sharplet.me
 remotehost = imap.fastmail.com
 remotepasseval = get_keychain_pass(account="adam@sharplet.me", server="imap.fastmail.com")
-folderfilter = lambda folder: not re.search('^(migrated|[Airmail]|Spam$)', folder)
+folderfilter = lambda folder: not re.search('^(migrated|\[Airmail\]|Spam$)', folder)
