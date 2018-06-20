@@ -1,5 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env python
 
-set -e
+import mailparser
+import subprocess
+import sys
 
-sed -n 's/^[Mm][Ee][Ss][Ss][Aa][Gg][Ee]-[Ii][Dd]: /message:/p' | xargs open
+mail = mailparser.parse_from_file_obj(sys.stdin)
+message_url = "message:%s" % mail.message_id
+subprocess.check_call(["open", message_url])
