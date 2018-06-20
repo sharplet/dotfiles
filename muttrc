@@ -116,3 +116,4 @@ mailboxes \
 # Other special folders
 set mbox = "+adam-sharplet.me/Archive"
 set postponed = "+adam-sharplet.me/Drafts"
+set record = "+adam-sharplet.me/Sent"
