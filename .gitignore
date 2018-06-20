@@ -1,3 +1,4 @@
+mutt/temp
 *.pyc
 /scripts/catdirname
 vim/bundle/*
