@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+cmd() {
+  echo "$@"
+  "$@"
+}
+
+if [ $# -gt 0 ]; then
+  sim_name="$(fzsim -1 "$@")"
+  sim_opts=(--simulator "$sim_name")
+fi
+
+cmd react-native run-ios "${sim_opts[@]}"

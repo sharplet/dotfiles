@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+while getopts 1 opt; do
+  case $opt in
+    1)
+      exec > >(head -1)
+      ;;
+    *)
+      ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+query="$*"
+
+xcrun simctl list \
+  | sed -n '/Device Types/,/Runtimes/ p' \
+  | sed -En 's/^(.+) \(.*/\1/p' \
+  | fzf -f "$query"
