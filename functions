@@ -1,8 +1,10 @@
 #!/bin/sh
 
+set -o pipefail
+
 _find_with_go_defaults() {
   base="$1"; shift
-  find -H "$base" -type d -maxdepth 4 -mindepth 2 "$@"
+  find -H "$base" -maxdepth 4 -mindepth 2 "$@"
 }
 
 # present a project selector and change to the selected directory
@@ -15,7 +17,7 @@ go() {
 
   dir=$(
     cd "$base" &&
-    _find_with_go_defaults . -name .git -type d -prune \
+    _find_with_go_defaults . -name .git -type d \
       | catdirname -0 \
       | xargs -0 ls -dt \
       | fzf --reverse -d/ --with-nth=3..
