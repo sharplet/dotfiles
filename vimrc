@@ -195,6 +195,12 @@ set splitbelow                  " horizontal splits open below the current windo
 set splitright                  " vertical splits open to the right of the current window
 
 
+"" fzf
+
+nmap <C-P> :GFiles<CR>
+nmap <C-L> :Tags<CR>
+
+
 "" File browsing
 
 let g:netrw_liststyle=3         " use netrw's tree view by default
