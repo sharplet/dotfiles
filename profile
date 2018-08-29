@@ -1,14 +1,19 @@
 # shellcheck disable=SC1090,1091
 # vim: ft=sh
 
+command_line_tools=/Library/Developer/CommandLineTools
+git_core=/usr/share/git-core
+
 [ -f "$HOME/.profile.private" ] && source "$HOME/.profile.private"
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -f "$HOME/.functions" ] && source "$HOME/.functions"
 [ -f "$HOME/.git-completion" ] && source "$HOME/.git-completion"
 
-if [ -d "/Library/Developer/CommandLineTools" ]; then
-  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+if [ -d "$git_core" ]; then
+  source "$git_core/contrib/completion/git-prompt.sh"
+elif [ -d "$command_line_tools" ]; then
+  source "$command_line_tools$git_core/git-prompt.sh"
 fi
 
 export EDITOR=vim
