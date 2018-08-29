@@ -96,3 +96,6 @@
 	date = default
 [pretty]
 	blame-decorate = %C(auto)%h %C(auto,cyan)[%aN]%C(reset) %s%C(auto)%d
+[diff-so-fancy]
+	markEmptyLines = false
+	stripLeadingSymbols = false
