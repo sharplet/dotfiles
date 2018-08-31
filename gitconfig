@@ -1,6 +1,6 @@
 ; vim: ft=gitconfig
 [core]
-	editor = vim +1 -c normal\\ $
+	editor = vim +1
 	trustctime = false
 	pager = less -S
 [pager]
