@@ -88,6 +88,8 @@
 	helper = osxkeychain
 [gitsh]
 	gitCommand = /usr/bin/env hub
+	noGreeting = true
+	prompt = "%D %c%b%#%w"
 [commit]
 	gpgsign = true
 [gpg]
