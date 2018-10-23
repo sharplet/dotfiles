@@ -24,6 +24,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'Quramy/tsuquyomi'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'b4winckler/vim-objc'
@@ -126,10 +127,34 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+function! AppleInterfaceStyle()
+  return systemlist("defaults read -g AppleInterfaceStyle 2>/dev/null || echo Light")[0]
+endfunction
+
 if !has("gui_running")
-"   set bg=light
-"   colorscheme pencil
-  colorscheme twilight256
+  if AppleInterfaceStyle() ==? "Dark"
+    set bg=dark
+    colorscheme twilight256
+  else
+    set bg=light
+    let g:PaperColor_Theme_Options =
+          \ {
+          \   'theme': {
+          \     'default': {
+          \       'transparent_background': 1
+          \     },
+          \     'default.light': {
+          \       'override': {
+          \         'cursorcolumn': ['', '255'],
+          \         'cursorline': ['', '255'],
+          \         'cursorlinenr_bg': ['', '255'],
+          \         'matchparen_bg': ['', '253']
+          \       }
+          \     }
+          \   }
+          \ }
+    colorscheme PaperColor
+  endif
 endif
 
 " Use posix syntax highlighting for shell scripts unless otherwise specified
