@@ -17,7 +17,7 @@ go() {
 
   dir=$(
     cd "$base" &&
-    _find_with_go_defaults . -name .git -type d \
+    _find_with_go_defaults . -name .git -type d 2>/dev/null \
       | catdirname -0 \
       | xargs -0 ls -dt \
       | fzf --reverse -d/ --with-nth=3..
