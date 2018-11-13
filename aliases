@@ -19,6 +19,9 @@ alias podu="pod update --no-repo-update"
 # rake
 alias rt="rake test"
 
+# ruby
+alias be="bundle exec"
+
 # navigation
 alias src="cd $HOME/src"
 
