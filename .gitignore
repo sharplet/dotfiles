@@ -1,6 +1,5 @@
 mutt/temp
 *.pyc
 /scripts/catdirname
-vim/bundle/*
-!vim/bundle/Vundle.vim
+/vim/plugged
 /.build/
