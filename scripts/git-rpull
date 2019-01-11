@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+declare -a pull_opts
+rebase=--rebase
+
+for opt; do
+  case "$opt" in
+    -i|--interactive)
+      rebase=--rebase=interactive
+      ;;
+    -r|--rebase)
+      rebase=--rebase
+      ;;
+    --no-rebase)
+      rebase=
+      ;;
+    *)
+      pull_opts+=("$opt")
+      ;;
+  esac
+done
+
+exec git pull "$rebase" "${pull_opts[@]}"
