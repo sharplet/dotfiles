@@ -1,4 +1,3 @@
 close $opt* $revision
-  -f
   --force
   --no-ff
