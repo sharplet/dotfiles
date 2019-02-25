@@ -131,8 +131,10 @@ function! AppleInterfaceStyle()
   return systemlist("defaults read -g AppleInterfaceStyle 2>/dev/null || echo Light")[0]
 endfunction
 
+let g:ForceDarkMode = 1
+
 if !has("gui_running")
-  if AppleInterfaceStyle() ==? "Dark"
+  if g:ForceDarkMode || AppleInterfaceStyle() ==? "Dark"
     set bg=dark
     colorscheme twilight256
   else
