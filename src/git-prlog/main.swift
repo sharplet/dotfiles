@@ -12,10 +12,14 @@ extension String {
 }
 
 struct ArgumentParser {
-  private(set) var arguments: ArraySlice<String>
+  private(set) var arguments: [String]
 
-  init(arguments: [String]) {
-    self.arguments = arguments.dropFirst()
+  init() {
+    self.init(arguments: CommandLine.arguments.dropFirst())
+  }
+
+  init<Arguments: Collection>(arguments: Arguments) where Arguments.Element == String {
+    self.arguments = Array(arguments)
   }
 
   mutating func parse() {
@@ -57,6 +61,6 @@ struct ArgumentParser {
   }
 }
 
-var parser = ArgumentParser(arguments: CommandLine.arguments)
+var parser = ArgumentParser()
 parser.parse()
 try exec("git", arguments: parser.arguments)
