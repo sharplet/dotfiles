@@ -60,4 +60,4 @@ struct ArgumentParser {
 
 var parser = ArgumentParser()
 parser.parse()
-try exec("git", arguments: parser.arguments)
+try exec("git", arguments: debugDump(parser.arguments))
