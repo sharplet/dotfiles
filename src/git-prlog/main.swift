@@ -29,37 +29,32 @@ struct ArgumentParser {
   mutating func parse() {
     var base = "master"
     var revision = ""
-    let argumentsIndex = firstPositionalArgumentIndex
+    var index = arguments.startIndex
 
-    var hasMoreArguments: Bool {
-      return argumentsIndex < arguments.endIndex && !arguments[argumentsIndex].isArgumentTerminator
-    }
+    if formNextPositionalArgumentIndex(&index) {
+      revision = arguments.remove(at: index)
 
-    if hasMoreArguments {
-      revision = arguments.remove(at: argumentsIndex)
-
-      if hasMoreArguments {
-        base = arguments.remove(at: argumentsIndex)
+      if formNextPositionalArgumentIndex(&index) {
+        base = arguments.remove(at: index)
       }
     }
 
-    arguments.insert("\(base)..\(revision)", at: argumentsIndex)
+    arguments.insert("\(base)..\(revision)", at: index)
     arguments.insert("log", at: arguments.startIndex)
   }
 
-  var firstPositionalArgumentIndex: Int {
-    var index = arguments.startIndex
-
-    search: while index < arguments.endIndex {
+  func formNextPositionalArgumentIndex(_ index: inout Int) -> Bool {
+    while index < arguments.endIndex {
       switch arguments[index] {
       case not(\.isOption), \.isArgumentTerminator:
-        break search
+        return true
+
       default:
         arguments.formIndex(after: &index)
       }
     }
 
-    return index
+    return false
   }
 }
 
