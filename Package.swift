@@ -6,5 +6,7 @@ let package = Package(
   name: "sharplet-dotfiles",
   targets: [
     .target(name: "catdirname"),
+    .target(name: "git-prlog", dependencies: ["Util"]),
+    .target(name: "Util"),
   ]
 )
