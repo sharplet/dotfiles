@@ -6,8 +6,12 @@
 import Util
 
 extension String {
+  var isArgumentTerminator: Bool {
+    return self == "--"
+  }
+
   var isOption: Bool {
-    return hasPrefix("-")
+    return hasPrefix("-") && !isArgumentTerminator
   }
 }
 
@@ -28,7 +32,7 @@ struct ArgumentParser {
     let argumentsIndex = firstPositionalArgumentIndex
 
     var hasMoreArguments: Bool {
-      return argumentsIndex < arguments.endIndex && arguments[argumentsIndex] != "--"
+      return argumentsIndex < arguments.endIndex && !arguments[argumentsIndex].isArgumentTerminator
     }
 
     if hasMoreArguments {
@@ -48,9 +52,7 @@ struct ArgumentParser {
 
     search: while index < arguments.endIndex {
       switch arguments[index] {
-      case "--":
-        break search
-      case let argument where !argument.isOption:
+      case not(\.isOption), \.isArgumentTerminator:
         break search
       default:
         arguments.formIndex(after: &index)
