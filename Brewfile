@@ -1,5 +1,14 @@
-update
-tap thoughtbot/formulae
-tap sharplet/formulae
-tap kylef/formulae
-install hub vim rcm pick chisel icdiff git ag todogrep swiftenv jq gnupg
+tap "thoughtbot/formulae"
+tap "sharplet/formulae"
+brew "ag"
+brew "chisel"
+brew "icdiff"
+brew "git"
+brew "gnupg"
+brew "hub"
+brew "jq"
+brew "kylef/formulae/swiftenv"
+brew "rcm"
+# brew "todogrep"
+brew "tmux"
+brew "vim"

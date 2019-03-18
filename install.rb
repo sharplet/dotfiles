@@ -1,16 +1,5 @@
 #!/usr/bin/env ruby
 
-# Homebrew
-
-def homebrew?
-  system("which brew 2>/dev/null")
-end
-
-if homebrew?
-  brew_bundle = File.expand_path("../brew-bundle", __FILE__)
-  system(brew_bundle)
-end
-
 # rcm
 
 rcrc = File.read(File.expand_path("../rcrc", __FILE__)).chomp
