@@ -1,5 +1,3 @@
-#!/usr/bin/env swift
-
 import Darwin.C
 
 func ascii(_ scalar: Unicode.Scalar) -> Int32 {
