@@ -48,6 +48,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -311,9 +312,42 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 
+" swift
+
+let g:test#swift#swiftpm#executable = 'swift spec'
+
+let s:swiftpm_source_file_pattern = 'Sources/\(.*\)/\(.*\).swift'
+let s:swiftpm_test_file_pattern = 'Tests/\(.*\)Tests/\(.*\)Tests.swift'
+
+function s:swiftpm_detect()
+  if matchend(g:projectionist_file, 'Tests.swift') != -1
+    let l:relative_path = fnamemodify(g:projectionist_file, ':.')
+    let l:alternate = substitute(l:relative_path, s:swiftpm_test_file_pattern, 'Sources/\1/\2.swift', 0)
+    call projectionist#append(getcwd(), { l:relative_path: { 'alternate': l:alternate } })
+
+  elseif matchend(g:projectionist_file, 'swift') != -1
+    let l:relative_path = fnamemodify(g:projectionist_file, ':.')
+    let l:alternate = substitute(l:relative_path, s:swiftpm_source_file_pattern, 'Tests/\1Tests/\2Tests.swift', 0)
+    call projectionist#append(getcwd(), { l:relative_path: { 'alternate': l:alternate } })
+  endif
+endfunction
+
+autocmd User ProjectionistDetect call s:swiftpm_detect()
+
+
 " vim-test
 
 let test#strategy = 'vtr'
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tT :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
+
+
+" vim-tmux-runner
+
+nmap <silent> <leader>k :VtrKillRunner<CR>
 
 
 "" vim-dispatch
@@ -328,10 +362,6 @@ command! -nargs=* -range=0 Todo Dispatch todogrep <q-args>
 let g:xcode_runner_command = 'Dispatch {cmd}'
 let g:xcode_xcpretty_flags = '--no-color'
 let g:xcode_xcpretty_testing_flags = '--test'
-
-map <Leader>t :Xtest<CR>
-map <Leader>b :Xbuild<CR>
-map <Leader>r :Xrun<CR>
 
 
 "" Qargs (http://vimcasts.org/episodes/project-wide-find-and-replace/)
