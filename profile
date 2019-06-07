@@ -4,8 +4,6 @@
 command_line_tools=/Library/Developer/CommandLineTools
 git_core=/usr/share/git-core
 
-[ -f "$HOME/.profile.private" ] && source "$HOME/.profile.private"
-
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -f "$HOME/.functions" ] && source "$HOME/.functions"
 [ -f "$HOME/.git-completion" ] && source "$HOME/.git-completion"
@@ -31,3 +29,5 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH=".git/safe/../../bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+
+[ -f "$HOME/.profile.private" ] && source "$HOME/.profile.private"
