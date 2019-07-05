@@ -4,7 +4,17 @@ set -o pipefail
 
 _find_with_go_defaults() {
   base="$1"; shift
-  find -H "$base" -maxdepth 4 -mindepth 2 "$@"
+
+  find -H "$base" -maxdepth 4 -mindepth 2 \
+    \( \
+      -name .build -o \
+      -name node_modules -o \
+      -name Packages -o \
+      -path '*/Carthage/Checkouts' \
+    \) \
+    -prune -o \
+    "$@" \
+    -print
 }
 
 # present a project selector and change to the selected directory
