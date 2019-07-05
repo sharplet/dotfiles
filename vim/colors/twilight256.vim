@@ -248,6 +248,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("DiffDelete", "af0000", "", "")
     call <SID>X("DiffRemoved", "af0000", "", "")
     "DiffText
+    call <SID>X("Error", "", "870000", "")
+    call <SID>X("SpellBad", "", "870000", "")
     "ErrorMsg
     "call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
     "call <SID>X("Folded", "ffd700", "4d4d4d", "")
