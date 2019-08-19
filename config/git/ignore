@@ -1,5 +1,6 @@
 # editor temp files
 *.swp
+*.un~
 
 # OS X
 .DS_Store
