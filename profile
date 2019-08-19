@@ -30,4 +30,4 @@ export PATH=".git/safe/../../bin:$PATH"
 export PATH="$HOME/.gem/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
-[ -f "$HOME/.profile.private" ] && source "$HOME/.profile.private"
+[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
