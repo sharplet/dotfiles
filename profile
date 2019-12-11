@@ -15,7 +15,7 @@ elif [ -d "$command_line_tools" ]; then
 fi
 
 export EDITOR=vim
-export PROJ_ROOT=$HOME
+export PROJ_ROOT="$HOME"
 
 # gpg
 export GPG_TTY=$(tty)
