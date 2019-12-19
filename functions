@@ -24,6 +24,13 @@ go() {
   fi
 }
 
+tgo() {
+  session="$(tmux list-sessions -F "#S" | fzf)"
+  if [ -n "$session" ]; then
+    tmux attach -t "$session"
+  fi
+}
+
 command_exists() {
   command -v "$@" >/dev/null
 }
