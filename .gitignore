@@ -2,6 +2,7 @@ mutt/temp
 *.pyc
 /scripts/catdirname
 /scripts/git-prlog
+/scripts/git-sync
 /scripts/ls-projects
 /vim/plugged
 /.build/

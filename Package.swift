@@ -13,6 +13,7 @@ let package = Package(
   targets: [
     .target(name: "catdirname"),
     .target(name: "git-prlog", dependencies: ["Util"]),
+    .target(name: "git-sync", dependencies: ["Util"]),
     .target(name: "ls-projects", dependencies: ["Regex", "Util"]),
     .target(name: "Util"),
   ]
