@@ -1,7 +1,7 @@
 # vim: ft=sh
 
 # present a project selector and change to the selected directory
-go() {
+repo() {
   base=${1:-$PROJ_ROOT}
   if [ -z "$base" ]; then
     echo >&2 "error: PROJ_ROOT must be set or a base directory passed as the first argument"
@@ -15,7 +15,6 @@ go() {
         | fzf --reverse -d/ --with-nth=2..
   )
 
-  # after selecting a project, expand it back out to its full path and jump to it
   if [ -n "$dir" ]; then
     dest="$base/$dir"
     touch "$dest" && cd "$dest" || return
