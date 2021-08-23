@@ -1,0 +1,5 @@
+[diff "strings"]
+	textconv = iconv -f utf-16 -t utf-8
+[user]
+	name = Adam Sharp
+	email = adam@sharplet.me
