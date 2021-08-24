@@ -10,17 +10,12 @@ struct Focus: ParsableCommand {
   @Argument(help: "A new Focus")
   var newFocus: [String] = []
 
-  @Option var capitalize = true
-
   func run() throws {
     let path = FilePath(NSHomeDirectory()).appending(".focus")
     let controller = FocusController(path: path)
 
     if !newFocus.isEmpty {
-      var newFocus = newFocus.joined(separator: " ")
-      if capitalize {
-        newFocus = newFocus.capitalized(with: .current)
-      }
+      let newFocus = newFocus.joined(separator: " ")
       try controller.setFocus(newFocus)
       refreshXbarIfNecessary()
     }
