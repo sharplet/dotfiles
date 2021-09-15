@@ -3,3 +3,5 @@
 [user]
 	name = Adam Sharp
 	email = adam@sharplet.me
+[commit]
+	verbose = true
