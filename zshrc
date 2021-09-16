@@ -1,3 +1,5 @@
+source .profile
+
 # Vi command line editing
 bindkey -v
 
