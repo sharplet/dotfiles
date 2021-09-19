@@ -1,3 +1,7 @@
+while read alias_args; do
+  alias "$alias_args"
+done <.aliases
+
 MANPATH=/opt/local/share/man:/usr/local/share/man:"$MANPATH"
 export MANPATH
 
