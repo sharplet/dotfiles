@@ -1,6 +1,7 @@
 set nocompatible
 
 set backspace=indent,eol,start
+set mouse=a
 set number
 syntax on
 
