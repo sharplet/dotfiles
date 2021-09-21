@@ -1,0 +1,14 @@
+# vim: ft=sh
+
+iscmd() {
+  command -v "$@" &>/dev/null
+  return $?
+}
+
+if iscmd port; then
+  portcd() {
+    if dir="$(port dir "$@")"; then
+      cd "$dir"
+    fi
+  }
+fi
