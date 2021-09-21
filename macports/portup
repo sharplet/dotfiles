@@ -1,0 +1,6 @@
+selfupdate
+install git
+install rcm
+install ripgrep
+install sleepwatcher
+install vim
