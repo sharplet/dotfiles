@@ -5,3 +5,5 @@
 	email = adam@sharplet.me
 [commit]
 	verbose = true
+[init]
+	defaultBranch = main
