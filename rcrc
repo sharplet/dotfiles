@@ -1,3 +1,4 @@
 # vim: ft=sh
 
+EXCLUDES=install.sh
 SYMLINK_DIRS=*
