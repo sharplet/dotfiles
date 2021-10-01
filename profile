@@ -15,12 +15,16 @@ sourcerc() {
 EDITOR=vim
 export EDITOR
 
+GIT_CORE=/Library/Developer/CommandLineTools/usr/share/git-core
+
 MANPATH=/opt/local/share/man:/usr/local/share/man:"$MANPATH"
 export MANPATH
 
 sourcerc aliases
 sourcerc functions
 [ -f .profile.local ] && source .profile.local
+
+[ -d "$GIT_CORE" ] && source "$GIT_CORE"/git-prompt.sh
 
 PATH=~/bin:/opt/local/bin:/opt/local/sbin:"$PATH"
 export PATH
