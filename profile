@@ -26,7 +26,7 @@ sourcerc functions
 
 [ -d "$GIT_CORE" ] && source "$GIT_CORE"/git-prompt.sh
 
-PATH=~/bin:/opt/local/bin:/opt/local/sbin:"$PATH"
+PATH=~/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:"$PATH"
 export PATH
 
 unset -f sourcerc
