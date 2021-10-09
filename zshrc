@@ -11,6 +11,9 @@ bindkey "^R" history-incremental-search-backward
 fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 
+# Homebrew additions
+fpath+=(/opt/homebrew/share/zsh/site-functions)
+
 # Enable shell functions in prompt
 setopt PROMPT_SUBST
 PROMPT="%m %2~\$(__git_ps1)%% "
