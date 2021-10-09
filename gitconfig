@@ -11,3 +11,5 @@
 	co = checkout
 	c = commit
 	d = diff
+[rebase]
+	autostash = true
