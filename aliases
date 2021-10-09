@@ -1,3 +1,4 @@
 # vim ft=sh
 
+alias ibrew="arch -x86_64 /opt/homebrew/bin/brew"
 alias whereis=apropos
