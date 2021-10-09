@@ -1,5 +1,5 @@
 selfupdate
-install git
+install git -perl5_28
 install rcm
 install ripgrep
 install sleepwatcher
