@@ -13,6 +13,10 @@
 	c = commit
 	d = diff
 	r = rebase
+	graph = log --graph --pretty=blame-decorate
+	g = graph
 [rebase]
 	autostash = true
 	autoSquash = true
+[pretty]
+	blame-decorate = %C(auto)%h %C(auto,cyan)[%aN]%C(reset) %s%C(auto)%d
