@@ -11,5 +11,7 @@
 	co = checkout
 	c = commit
 	d = diff
+	r = rebase
 [rebase]
 	autostash = true
+	autoSquash = true
