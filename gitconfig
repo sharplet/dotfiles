@@ -25,3 +25,5 @@
 [color]
 	ui = false
 	diff = true
+[pull]
+	rebase = false ; the default strategy
