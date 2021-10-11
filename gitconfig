@@ -15,6 +15,7 @@
 	r = rebase
 	graph = log --graph --pretty=blame-decorate
 	g = graph
+	yolo = push --force-with-lease
 [rebase]
 	autostash = true
 	autoSquash = true
