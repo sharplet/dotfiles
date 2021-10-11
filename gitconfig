@@ -22,3 +22,6 @@
 	autoSquash = true
 [pretty]
 	blame-decorate = %C(auto)%h %C(auto,cyan)[%aN]%C(reset) %s%C(auto)%d
+[color]
+	ui = false
+	diff = true
