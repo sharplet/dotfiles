@@ -16,6 +16,7 @@
 	graph = log --graph --pretty=blame-decorate
 	g = graph
 	yolo = push --force-with-lease
+	cp = cherry-pick
 [rebase]
 	autostash = true
 	autoSquash = true
