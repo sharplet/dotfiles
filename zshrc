@@ -16,4 +16,4 @@ fpath+=(/opt/homebrew/share/zsh/site-functions)
 
 # Enable shell functions in prompt
 setopt PROMPT_SUBST
-PROMPT="%m %2~\$(__git_ps1)%% "
+PROMPT="%n@%m %2~\$(__git_ps1)%% "
