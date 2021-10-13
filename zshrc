@@ -7,6 +7,7 @@ unalias run-help
 autoload run-help
 alias help=run-help
 HELPDIR=/usr/share/zsh/5.8/help
+[ -d "$HELPDIR" ] || echo >&2 "warning: HELPDIR not found: $HELPDIR"
 
 # Vi command line editing
 bindkey -v
