@@ -1,4 +1,6 @@
-source ~/.profile
+pushd -q "$HOME"
+source .profile
+popd -q
 
 # Vi command line editing
 bindkey -v
