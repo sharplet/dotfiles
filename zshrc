@@ -2,6 +2,12 @@ pushd -q "$HOME"
 source .profile
 popd -q
 
+# enable online help
+unalias run-help
+autoload run-help
+alias help=run-help
+HELPDIR=/usr/share/zsh/5.8/help
+
 # Vi command line editing
 bindkey -v
 
