@@ -1,0 +1,4 @@
+# vim: ft=sshconfig
+Host github.com *.apple.com
+  AddKeysToAgent yes
+  UseKeychain yes

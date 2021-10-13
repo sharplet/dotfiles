@@ -1,4 +1,4 @@
 # vim: ft=sh
 
 EXCLUDES=install.sh
-SYMLINK_DIRS=*
+SYMLINK_DIRS="config macports vim zsh"
