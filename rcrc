@@ -1,4 +1,6 @@
 # vim: ft=sh
 
+DOTFILES_DIRS=".dotfiles .dotfiles.internal"
 EXCLUDES="install install.sh"
 SYMLINK_DIRS="config macports vim zsh"
+UNDOTTED="bin"
