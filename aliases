@@ -1,4 +1,4 @@
 # vim ft=sh
 
-alias ibrew="arch -x86_64 /opt/homebrew/bin/brew"
+[ "$(arch)" = arm64 ] && alias ibrew="arch -x86_64 brew"
 alias whereis=apropos

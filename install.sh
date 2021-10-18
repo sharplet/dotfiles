@@ -2,33 +2,54 @@
 
 set -e
 
-source ./profile
+install=help
+tags=
 
-iscmd port && echo "MacPorts already installed." || (
-  echo "Installing MacPorts..."
+for opt; do
+  case $opt in
+    --homebrew)
+      install=homebrew
+      touch .install-homebrew
+      cleanup="rm -f .install-homebrew"
+      shift
+      ;;
+    --macports)
+      install=macports
+      touch .install-macports
+      cleanup="rm -f .install-macports"
+      shift
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 
-  tmpdir="$(mktemp -d /tmp/rcup-install-macports.XXXXXX)"
-  trap "rm -rf $tmpdir" EXIT
-  cd "$tmpdir"
+[ -n "$cleanup" ] && trap "$cleanup" EXIT
 
-  macports_version="$(
-    curl -s --head https://github.com/macports/macports-base/releases/latest \
-      | sed -En 's|^Location:[[:space:]]+https://.*github\.com/.+/tag/v?([^[:space:]/]+).*$|\1|ip'
-  )"
-  archive_base="MacPorts-$macports_version"
-  tarball="$archive_base.tar.gz"
-
-  curl -O "https://distfiles.macports.org/MacPorts/$tarball"
-  tar xzf "$tarball"
-  cd "$archive_base"
-
-  ./configure
-  make
-  sudo make install
-)
-
-echo "Installing rcm..."
-sudo port install rcm
+case $install in
+  help)
+    echo "Usage:"
+    echo "    ./install.sh --homebrew                 Install with Homebrew"
+    echo "    ./install.sh --macports                 Install with MacPorts"
+    exit
+    ;;
+  homebrew)
+    source profile
+    source install/homebrew.sh
+    install_homebrew
+    iscmd rcup || (echo "Installing rcm..."; brew install rcm)
+    ;;
+  macports)
+    source profile
+    source install/macports.sh
+    install_macports
+    tags="-t macports"
+    iscmd rcup || (echo "Installing rcm..."; sudo port install rcm)
+    ;;
+esac
 
 echo "Running rcup..."
-env RCRC=./rcrc rcup
+env RCRC=./rcrc rcup $tags
+
+echo "rcup complete. You may wish to start a new shell."

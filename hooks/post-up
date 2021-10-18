@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Running portup..."
-sudo /opt/local/bin/port -NF ../macports/portup
-
-echo "rcup complete. You may wish to start a new shell."
+if [ -f ../.install-macports ]; then
+  echo "Running portup..."
+  sudo /opt/local/bin/port -NF ../macports/portup
+fi
