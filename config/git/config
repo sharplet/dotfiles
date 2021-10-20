@@ -27,3 +27,6 @@
 	diff = true
 [pull]
 	rebase = false ; the default strategy
+[gitsh]
+	noGreeting = true
+	prompt = "%D %c%b%#%w"
