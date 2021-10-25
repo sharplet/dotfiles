@@ -2,3 +2,5 @@
 
 [ "$(arch)" = arm64 ] && alias ibrew="arch -x86_64 brew"
 alias whereis=apropos
+
+sourcerc aliases.local
