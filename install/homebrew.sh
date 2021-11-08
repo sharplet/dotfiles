@@ -1,4 +1,4 @@
-internal_homebrew_url="https://$GITHUB_INTERNAL/raw/gist/sharplet/4d2596f12746cd6e72c156d199b7df7d/raw/6eb4e6662d86a2a341838f4e13224bc01afe4675/install_homebrew.sh"
+internal_homebrew_url="https://$GITHUB_INTERNAL/raw/gist/sharplet/4d2596f12746cd6e72c156d199b7df7d/raw/b05a90046acf3268b81947e6bfcd8d5f2414baf0/install_homebrew.sh"
 
 if ! iscmd brew \
   && install_homebrew_tmp="$(mktemp -d /tmp/install_homebrew.XXXXXX)" \
