@@ -17,6 +17,9 @@ export EDITOR
 
 GIT_CORE=/Library/Developer/CommandLineTools/usr/share/git-core
 
+HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+export HOMEBREW_CASK_OPTS
+
 MANPATH=/opt/local/share/man:/usr/local/share/man:"$MANPATH"
 export MANPATH
 
