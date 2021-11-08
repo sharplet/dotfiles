@@ -7,8 +7,8 @@ sourcerc() {
   name="$1"
   if [ -f ".$name" ]; then
     source ".$name"
-  else
-    source "${name}"
+  elif [ -f "$name" ]; then
+    source "$name"
   fi
 }
 
