@@ -17,6 +17,10 @@
 	g = graph
 	yolo = push --force-with-lease
 	cp = cherry-pick
+	dc = diff --cached
+	ap = add --patch
+	b = branch
+	get = fetch --prune
 [rebase]
 	autostash = true
 	autoSquash = true
