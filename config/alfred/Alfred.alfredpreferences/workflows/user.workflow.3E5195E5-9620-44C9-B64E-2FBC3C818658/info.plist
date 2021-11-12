@@ -210,7 +210,7 @@ end run</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Provides commands to enable, disable, or toggle dark mode.</string>
 	<key>uidata</key>
 	<dict>
 		<key>0342D5D8-3BE7-42B8-BFBC-0E1683D5F6CC</key>
@@ -256,6 +256,10 @@ end run</string>
 			<integer>310</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
