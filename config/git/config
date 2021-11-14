@@ -34,3 +34,5 @@
 [gitsh]
 	noGreeting = true
 	prompt = "%D %c%b%#%w"
+[core]
+	editor = vim
