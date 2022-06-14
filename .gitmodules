@@ -1,0 +1,3 @@
+[submodule "vim/pack/tpope/start"]
+	path = vim/pack/tpope/start
+	url = https://tpope.io/vim/fugitive.git

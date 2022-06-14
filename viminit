@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if command -v vim >/dev/null; then
+  vim -u NONE \
+    -c "helptags fugitive/doc" \
+    -c q
+fi
